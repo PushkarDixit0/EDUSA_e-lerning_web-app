@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIT</title>
+    <link rel="stylesheet" href="/COURSESDOC/COURSESINFILE.css">
+    <link rel="stylesheet" href="/COURSESDOC/COURSEENDSIDE.css">
+    <link rel="stylesheet" href="/COURSESDOC/exam.css">
+</head>
+
+<body>
+    <nav id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+
+                    <a href="../../home.html">
+                        <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="mainstructure">
+        <h1> Git Exam 1</h1>
+        <form id="examForm" >
+            <div class="qutionofmcq">
+                <p>1. What is Git?</p>
+                <input type="radio" name="qna1" value="a">
+                <label class="lab">a. Text Editor</label><br>
+                <input type="radio" name="qna1" value="b">
+                <label class="lab">b. Compiler</label><br>
+                <input type="radio" name="qna1" value="c">
+                <label class="lab">c. Version Control System</label><br>
+                <input type="radio" name="qna1" value="d">
+                <label class="lab">d. Operating System</label><br>
+            </div>
+
+            <div class="qutionofmcq">
+                <p>2. Which command initializes a new Git repository?</p>
+                <input type="radio" name="qna2" value="a">
+                <label class="lab">a. git new</label><br>
+                <input type="radio" name="qna2" value="b">
+                <label class="lab">b. git create</label><br>
+                <input type="radio" name="qna2" value="c">
+                <label class="lab">c. git start</label><br>
+                <input type="radio" name="qna2" value="d">
+                <label class="lab">d. git init</label><br>
+            </div>
+
+            <div class="qutionofmcq">
+                <p>3. How can you view the commit history in Git?</p>
+                <input type="radio" name="qna3" value="a">
+                <label class="lab">a. git logs </label><br>
+                <input type="radio" name="qna3" value="b">
+                <label class="lab">b. git history</label><br>
+                <input type="radio" name="qna3" value="c">
+                <label class="lab">c. git commits</label><br>
+                <input type="radio" name="qna3" value="d">
+                <label class="lab">d. git log</label><br>
+            </div>
+
+            <div class="qutionofmcq">
+                <p>4. Which command adds changes to the staging area in Git?</p>
+                <input type="radio" name="qna4" value="a">
+                <label class="lab">a. git add</label><br>
+                <input type="radio" name="qna4" value="b">
+                <label class="lab">b. git save</label><br>
+                <input type="radio" name="qna4" value="c">
+                <label class="lab">c. git upload</label><br>
+                <input type="radio" name="qna4" value="d">
+                <label class="lab">d. git stage</label><br>
+            </div>
+
+            <div class="qutionofmcq">
+                <p>5. Which command shows the status of changes in the repository?</p>
+                <input type="radio" name="qna5" value="a">
+                <label class="lab">a. git status</label><br>
+                <input type="radio" name="qna5" value="b">
+                <label class="lab">b. git show</label><br>
+                <input type="radio" name="qna5" value="c">
+                <label class="lab">c. git view</label><br>
+                <input type="radio" name="qna5" value="d">
+                <label class="lab">d.git display</label><br>
+            </div>
+
+         <input class="submit" type="submit">
+        </form>
+
+
+    </section>
+
+    <script>
+        document.getElementById('examForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const correctAnswers = {
+                1: 'c', // Question 1
+                2: 'd', // Question 2
+                3: 'd', // Question 3
+                4: 'a', // Question 4
+                5: 'a'  // Question 5
+            };
+            
+            let totalCorrectAnswers = 0;
+            
+            // Iterate through each question
+            for (let i = 1; i <= 5; i++) {
+                const selectedOption = document.querySelector(`input[name=qna${i}]:checked`);
+                
+                if (selectedOption && selectedOption.value === correctAnswers[i]) {
+                    totalCorrectAnswers++;
+                }
+            }
+            
+            if (totalCorrectAnswers >= 4) {
+                alert('Congratulations! You passed the exam.');
+                
+            } else {
+                alert('Sorry, you did not pass the exam.');
+            }
+        });
+    </script>
+</body>
+
+</html>

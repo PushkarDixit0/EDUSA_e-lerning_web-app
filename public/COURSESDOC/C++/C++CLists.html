@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Lists</title>
+    <link rel="stylesheet" href="/COURSESDOC/COURSESINFILE.css">
+    <link rel="stylesheet" href="/COURSESDOC/COURSEENDSIDE.css">
+</head>
+<body>
+    <nav id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+
+                    <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <section style="padding-top: 3rem;"></section>
+    <h1>Lists</h1>
+    <h2>C++ List</h2>
+    <p>
+        List is a contiguous container while vector is a non-contiguous container i.e list stores the elements on a contiguous memory and vector stores on a non-contiguous memory.
+        Insertion and deletion in the middle of the vector is very costly as it takes lot of time in shifting all the elements. Linklist overcome this problem and it is implemented using list container.
+        List supports a bidirectional and provides an efficient way for insertion and deletion operations.
+        Traversal is slow in list as list elements are accessed sequentially while vector supports a random access.
+    </p>
+    <h2>Template for list</h2>
+    <p>
+        #include<iostream><br>
+            #include<list><br>  
+            using namespace std;<br>
+            int main() <br> 
+            {  <br>
+               list<int> l;  <br>
+            } 
+            It creates an empty list of integer type values.
+            List can also be initalised with the parameters.<br>
+            #include<iostream> <br>
+                #include<list> <br> 
+                using namespace std;  <br>
+                int main()  <br>
+                { <br> 
+                   list<int> l{1,2,3,4};  <br>
+                }  
+                List can be initialised in two ways.<br>
+                list<int>  new_list{1,2,3,4}; <br> 
+                    or <br> 
+                    list<int> new_list = {1,2,3,4};  
+    </p>
+
+    <h2>List can be initialised in two ways.</h2>
+    <p>
+        list<int>  new_list{1,2,3,4};<br>
+            or <br>
+            list<int> new_list = {1,2,3,4}; <br> 
+    </p> 
+    <h2>C++ List Functions</h2>  
+    <p>
+        Following are the member functions of the list:
+        <table class="alt">
+            <tbody><tr>
+            <th>Method</th>
+            <th>Description</th>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-insert-function">insert()</a></td>
+            <td>It inserts the new element before the position pointed by the iterator.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-push_back-function">push_back()</a></td>
+            <td>It adds a new element at the end of the vector.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-push_front-function">push_front()</a></td>
+            <td>It adds a new element to the front.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-pop_back-function">pop_back()</a></td>
+            <td>It deletes the last element.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-pop_front-function">pop_front()</a></td>
+            <td>It deletes the first element.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-empty-function">empty()</a></td>
+            <td>It checks whether the list is empty or not.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-size-function">size()</a></td>
+            <td>It finds the number of elements present in the list.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-max_size-function">max_size()</a></td>
+            <td>It finds the maximum size of the list.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-front-function">front()</a></td>
+            <td>It returns the first element of the list. </td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-back-function">back()</a></td>
+            <td>It returns the last element of the list.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-swap-function">swap()</a></td>
+            <td>It swaps two list when the type of both the list are same.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-reverse-function">reverse()</a></td>
+            <td>It reverses the elements of the list.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-sort-function">sort()</a></td>
+            <td>It sorts the elements of the list in an increasing order.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-merge-function">merge()</a></td>
+            <td>It merges the two sorted list.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-splice-function">splice()</a></td>
+            <td>It inserts a new list into the invoking list.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-unique-function">unique()</a></td>
+            <td>It removes all the duplicate elements from the list.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-resize-function">resize()</a></td>
+            <td>It changes the size of the list container.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-assign-function">assign()</a></td>
+            <td>It assigns a new element to the list container.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-emplace-function">emplace()</a></td>
+            <td>It inserts a new element at a specified position.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-emplace_back-function">emplace_back()</a></td>
+            <td>It inserts a new element at the end of the vector.</td>
+            </tr>
+            <tr>
+            <td><a href="cpp-list-emplace_front-function">emplace_front()</a></td>
+            <td>It inserts a new element at the beginning of the list.</td>
+            </tr>
+            </tbody></table>
+    </p> 
+    <h2>C++ List insert()</h2> 
+    <p>
+        C++ List insert() function inserts a new element just before the specified position. It increases the size of the list container by the number of elements added in the list.
+    </p> 
+    <h2>Syntax</h2>
+    <p>
+        iterator insert( iterator pos, const value_type value);  
+        void insert( iterator pos, int n, const value_type value);  
+        void insert( iterator pos, InputIterator first, InputIterator last); 
+    </p>
+    <h2>Parameter</h2> 
+    <p>
+        pos: It defines the position before which the new element is to be inserted.
+
+        value: The value to be inserted.
+
+        n: Number of times the value to be occurred.
+    </p>
+    <h2>Return value</h2> 
+    <p>
+        It returns an iterator pointing to the newly constructed element.
+    <h2>Example 1</h2>
+    <p>
+        Let's see a simple example:<br>
+
+            #include <iostream> <br> 
+            #include<list> <br> 
+            using namespace std; <br> 
+            int main()<br>  
+            { <br> 
+            list<int> li={1,2,3,4};<br>  
+            list<int>::iterator itr=li.begin();  <br>
+            li.insert(itr,5);  <br>
+            for(itr=li.begin();itr!=li.end();++itr) <br> 
+            cout<<*itr;  <br>
+            return 0;  <br>
+            }  
+    </p>
+    </p>
+    <h2>Output:</h2>
+    <p>
+        51234
+    </p> 
+    <h2>C++ List push_back()</h2> 
+    <p>
+        C++ List push_back() inserts a new element at the end of the list and the size of the list container increases by one.
+        <img src="/img/lists1.png" alt="">
+        push_back() function inserts element 5 at the end.
+
+    </p>
+    <h2>Syntax</h2> 
+    <p>
+        Suppose a element is 'x':
+        push_back(const value_type& x);  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        x: It is the value to be inserted at the end.
+
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example 1</h2>
+    <p>
+        Let's see a simple example<br>
+
+        #include <iostream><br>  
+        #include<list><br>  
+        using namespace std; <br> 
+        
+        int main() <br> 
+        { <br> 
+        list<string> li={"C"," C++"," .Net"}; <br> 
+        list<string>::iterator itr;<br>  
+        li.push_back(" java"); <br> 
+        li.push_back(" PHP"); <br> 
+        for(itr=li.begin();itr!=li.end();++itr) <br> 
+        cout<<*itr; <br> 
+            return 0; <br> 
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        C  C++  .Net java PHP<br>
+        In this example, push_back() function inserts two strings i.e java and PHP at the end of the list.
+    </p>
+    <h2>C++ List push_front()</h2>
+    <p>
+        C++ List push_front() function adds a new element in the beginning of the list. Therefore, increasing the size of the list by one.
+        <img src="/img/lists2.png" alt="">
+    </p>
+    <p>
+        push_front(0) function adds 0 element in the beginning.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        Suppose an element is 'x':<br>
+        void push_front(const value_type& x);  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        x: It is the value to be inserted in the beginning of the list.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example</h2>
+    <p>
+        Let's see a simple example<br>
+
+        #include <iostream><br>  
+        #include<list> <br> 
+        using namespace std; <br> 
+        int main() <br> 
+        { <br> 
+            list<int> li={20,30,40,50};<br>  
+            li.push_front(10); <br> 
+            list<int>::iterator itr; <br> 
+            for(itr=li.begin();itr!=li.end();++itr) <br> 
+            cout<<*itr<<",";  <br>
+            return 0; <br> 
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        10,20,30,40,50
+    </p>
+    <h2>C++ List pop_back()</h2>
+    <p>
+        C++ List pop_back() function removes the last element from the list and reduces the size of the list by one.
+        <img src="/img/poplist.png" alt="">
+    </p>
+    <p>
+        pop_back() function removes the last element i.e 4
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        void  pop_back();  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        It does not contain any parameter.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example</h2>
+    <p>
+        Let's see a simple example<br>
+
+        #include <iostream> <br>
+        #include<list><br>  
+        using namespace std; <br> 
+        int main() <br> 
+        { <br> 
+        list<int> li={6,7,8,9}; <br> 
+        list<int>::iterator itr; <br> 
+        li.pop_back(); <br> 
+        li.pop_back(); <br> 
+        for(itr=li.begin();itr!=li.end();++itr)<br>  
+        cout<<*itr<<",";<br>  
+        return 0;<br>  
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        6,7
+    </p>
+    <h2>C++ List pop_front()</h2>
+    <p>
+        C++ List pop_front() function removes the first element from the list and therefore, reducing the size of the list by one.
+        <img src="/img/popfront.png" alt="">
+        pop_front() function removes the first element i.e 1.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        void pop_front();  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        It does not contain any parameter.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example</h2>
+    <p>
+        Let's see a simple example<br>
+
+        #include <iostream><br>  
+        #include<list>  <br>
+        using namespace std; <br> 
+        int main() <br> 
+        { <br> 
+            list<int> li={20,30,40,50}; <br> 
+            li.pop_front();<br>  
+            list<int>::iterator itr;  <br>
+            for(itr=li.begin();itr!=li.end();++itr) <br> 
+            cout<<*itr<<","; <br> 
+            return 0; <br> 
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        30,40,50<br>
+        In this example, pop_front() function removes the first element from the list i.e it removes the element '20' from the list.
+    </p>
+    <h2>C++ List empty()</h2>
+    <p>
+        C++ List empty() function checks whether the list is empty or not. It returns true, if the list is empty otherwise false. It does not modify the content of the list.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        bool empty();  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        It does not contain any parameter.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It returns boolean value either 1 or 0. If the list is empty, it returns 1 otherwise 0.
+    </p>
+    <h2>Example 1</h2>
+    <p>
+        #include <iostream> <br> 
+            #include<list> <br> 
+            using namespace std;  <br>
+              
+            int main() <br> 
+            {  <br>
+                list<int> li;  <br>
+                std::cout << "empty() : " << li.empty()<<std::endl; <br> 
+                return 0;  <br>
+            }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        empty() : 1
+    </p>
+    <h2>C++ List size()</h2>
+    <p>
+        C++ List size() function finds the number of elements present in the list. This function does not modify the content of a deque.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        int size();  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        It does not contain any parameter.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It returns the number of elements in the list.
+    </p>
+    <h2>Example</h2>
+    <p>
+        Let's see a simple example<br>
+        #include <iostream> <br> 
+            #include<list> <br> 
+            using namespace std; <br> 
+            int main() <br> 
+            { <br> 
+                list<int> li={1,2,3}; <br> 
+                std::cout << "size of the list is: " << li.size()<<std::endl;<br>  
+                return 0;  <br>
+            }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        size of the list is: 3
+    </p>
+    <h2>C++ List max_size()</h2>
+    <p>
+        C++ List max_size() function determines the maximum size of the list. This function does not change the size of the list.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        size_type max_size();  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        It does not contain any parameter.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It returns the maximum number of elements that the list can hold upto.
+    </p>
+    <h2>Example</h2>
+    <p>
+        Let's see a simple example<br>
+        #include <iostream><br>  
+            #include<list> <br> 
+            using namespace std; <br> 
+            int main()  <br>
+            {  <br>
+                list<int> li={9,10,11}; <br> 
+                std::cout << "size of the list is: " << li.max_size()<<std::endl;  <br>
+                return 0;  <br>
+            }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        size of the list is: 768614336404564650
+    </p>
+    <h2>C++ List front()</h2>
+    <p>
+        C++ List front() function returns the first element of the list. It provides the direct reference of the element.
+    </p>
+    <h2>Difference between front() and begin()</h2>
+    <p>
+        The begin() function returns an iterator to the element while front() function returns a direct reference to the same element.
+        <img src="/img/font.png" alt="">
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        reference front();
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        It does not contain any parameter.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It returns the direct reference of the first element.
+    </p>
+    <h2>Example</h2>
+    <p>
+        Let's see a simple example when the list containing integer values.<br>
+
+        #include <iostream> <br> 
+        #include<list> <br> 
+        using namespace std; <br> 
+        int main()  <br>
+        { <br> 
+            std::list<int> li={1,2,3,4,5};  <br>
+            std::cout <<"front() is :"<< li.front() << std::endl; <br> 
+            return 0;  <br>
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        front() is : 1<br>
+        In this example, front() function returns the first element of the list i.e 1.
+    </p>
+    <h2>C++ List back()</h2>
+    <p>
+        C++ List back() function returns the last element of the list. It provides the direct reference to the element.
+    </p>
+    <h2>Difference between back() and end() function</h2>
+    <p>
+        The end() function returns an iterator to the element while back() function returns a direct reference to the same element.
+        <img src="/img/back.png" alt="">
+
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        reference back();  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        It does not contain any parameter.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It returns the direct reference of the last element.
+    </p>
+    <h2>Example</h2>
+    <p>
+        Let's see a simple example<br>
+
+        #include <iostream> <br> 
+        #include<list> <br> 
+        using namespace std; <br> 
+        int main() <br> 
+        { <br> 
+            
+            std::list<char> li={'+','-','*','@'};<br>  
+            std::cout <<"back() is :"<< li.back() << std::endl; <br> 
+            return 0; <br> 
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        back() is : @<br>
+        In this example, back() function returns the last element of the list i.e @.
+    </p>
+    <h2>C++ List swap()</h2>
+    <p>
+        C++ List swap() function exchange the contents of the list with another list of same type but the sizes can be differ.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        void swap(list& x);  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        x: It is an another list which is to be exchanged with the given list.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Error:</h2>
+    <p>
+        It throws an error, when both the list are of different type.
+    </p>
+    <h2>Example</h2>
+    <p>
+        Let's see a simple example when both the list are of same type and same size.<br>
+
+        #include <iostream> <br> 
+        #include<list> <br> 
+        using namespace std;<br>  
+        int main() <br> 
+        { <br> 
+            
+            std::list<char> li={'+','-','*','@'}; <br> 
+            list<char> li1={'j','a','v','a'};<br>  
+            std::cout << "Initially,content of list li is :"; <br> 
+            for(list<char> :: iterator itr=li.begin();itr!=li.end();++itr) <br> 
+            cout<<*itr; <br> 
+            std::cout << '\n'<<"Initially,content of list li1 is :";<br>  
+            for(list<char> :: iterator itr=li1.begin();itr!=li1.end();++itr) <br> 
+            cout<<*itr;<br>  
+            li.swap(li1); <br> 
+            cout<<'\n';<br>  
+            cout<<"After swapping, content of list li is :"; <br> 
+            for(list<char> :: iterator itr=li.begin();itr!=li.end();++itr) <br> 
+            cout<<*itr; <br> 
+            cout<<'\n';<br>  
+            cout<<"After swapping, content of list li1 is :"; <br> 
+            for(list<char> :: iterator itr=li1.begin();itr!=li1.end();++itr)<br>  
+            cout<<*itr;  <br>
+            return 0; <br> 
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        Initially,content of list li is : +-*@<br>
+        Initially,content of list li1 is : java<br>
+        After swapping, content of list li is : java<br>
+        After swapping, content of list li1 is : +-*@<br>
+        In this example, swap() function swaps the contents of list li with the list li1.
+    </p>
+    <h2>C++ List reverse()</h2>
+    <p>
+        C++ List reverse() function reverses the order of the elements in the list container.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        void reverse();  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        It does not contain any parameter.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example 1</h2>
+    <p>
+        Let's see a simple example when the list contains integer value.<br>
+        #include <iostream> <br> 
+            #include<list> <br> 
+            using namespace std;<br>  
+            int main()<br>  
+            {<br>  
+               std::list<int> li={1,2,3,4,5,6};<br>  
+                cout<<"content of list li is :";<br>  
+                for(list<int> :: iterator itr=li.begin();itr!=li.end();++itr)<br>  
+                cout<<*itr;<br>  
+                li.reverse();<br>  
+                cout<<'\n';<br>  
+                cout<<"After reversing, content of list li is :";<br>  
+                for(list<int> :: iterator itr=li.begin();itr!=li.end();++itr)<br>  
+                cout<<*itr;<br> 
+              
+                cout<<'\n';<br>  
+                return 0;<br>  
+            }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        content of list li is : 123456<br>
+        After reversing, content of list li is : 654321<br>
+        In this example, reverse() function reverses the content of the list li and the output is 654321.
+    </p>
+    <h2>C++ List sort()</h2>
+    <p>
+        C++ List sort() function arranges the elements of a given list in an increasing order. It does not involve in any construction and destruction of elements. Elements are only moved within the container.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        void sort();  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        It does not contain any parameter.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example</h2>
+    <p>
+        Let's see a simple example<br>
+        #include <iostream> <br> 
+            #include<list> <br> 
+            using namespace std; <br> 
+            int main() <br> 
+            { <br> 
+               list<int> li={6,4,10,2,4,1};<br>  
+               list<int>:: iterator itr; <br> 
+               cout<<?Elements of list are :?;<br>  
+               for(itr=li.begin();itr!=li.end();++itr) <br> 
+               std::cout << *itr<<","; <br> 
+               li.sort();<br>  
+               cout<<'\n';  <br>
+               cout<<?Sorted elements are :?; <br> 
+               for(itr=li.begin();itr!=li.end();++itr) <br> 
+               std::cout << *itr <<","; <br> 
+                return 0; <br> 
+            }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        Elements of list are : 6,4,10,2,4,1,<br>
+        Sorted elements are : 1,2,4,4,6,10<br>
+        In this example, sort() function sorts the elements of a given list and its output is 1,2,4,4,6,10.
+    </p>
+    <h2>C++ List merge()</h2>
+    <p>
+        C++ List merge() function merges two sorted list in an increasing order. It merges y list into the given list container and this removes all the elements from y.
+
+    </p>
+    <h2>Two condition can be ocurred in merge function():</h2>
+    <p>
+        If the comparator is not passed in the parameter then the two sorted list is merged into a single one.<br>
+        If the comparator is passed in the parameter then the list is merged based on their internal comparisons.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        Consider two list list1 and list2. Syntax would be:<br>
+        list1.merge(list2); <br> 
+        list1.merge(list2,compare); 
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        list2: The list to be merged with the list1.<br>
+
+        compare: It is a compare function object that compares the value of the first argument with the second argument. If the value of the first argument is less than the second argument then it returns true otherwise false.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example </h2>
+    <p>
+        Let's see a simple example<br>
+
+        #include <iostream><br>  
+        #include<list><br>  
+        using namespace std;<br>  
+        int main() <br>
+        { <br> 
+        list<int> li={1,2,3,4};<br>  
+        list<int> li1={5,6,7,8};<br>  
+        li.merge(li1);<br>  
+        for(list<int>::iterator itr=li.begin();itr!=li.end();++itr)<br>  
+        std::cout << *itr<<? ?;<br>  
+            return 0;<br>  
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        1 2 3 4 5 6 7 8<br>
+        In this example, merge() function merges the list li with the list li1 in a single list.
+    </p>
+    <h2>C++ List splice()</h2>
+    <p>
+        C++ List splice function transfers the elements from list y into a list container at a specified position and this leads to the altering the sizes of both the list.
+
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        void splice(iterator pos, list& y);<br>   
+        void splice(iterator pos, list& y, iterator pos1);<br>
+        void splice(iterator pos, list& y, iterator first, iterator last);  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        y: It is a list object of same type from which the content is to be transferred.<br>
+
+        pos: It defines the position where the elements of y are inserted.<br>
+
+        pos1: The element pointed by the pos1 is to be transferred.
+    </p>
+    <p>
+        (first,last): It defines the range of the elements which are to be transferred.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example </h2>
+    <p>
+        Let's see a simple example<br>
+
+        #include <iostream><br>  
+        #include<list> <br> 
+        using namespace std; <br> 
+        int main()<br>  
+        { <br> 
+            
+        list<int> li={1,2,3,4};  <br>
+        list<int> li1={5,6,7,8}; <br> 
+        list<int>::iterator itr=li.begin();<br>  
+        li.splice(itr,li1); <br> 
+        for(list<int>::iterator itr=li.begin();itr!=li.end();++itr)<br>  
+        std::cout << *itr <<" ";<br>  
+        return 0;<br>  
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        5 6 7 8 1 2 3 4
+    </p>
+    <h2>C++ List unique()</h2>
+    <p>
+        C++ List unique() function removes all the duplicate elements present consecutively from the list.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        void unique();<br>
+        void unique(BinaryPredicate pred); <br> 
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        pred: It is a binary predicate that takes two values of same type. It returns true, if both the values are equal otherwise false.
+    </p>
+    <h2>Syntax of the predicate function would be:</h2>
+    <p>
+        bool pred( type1 &x, type2 &y);  
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example</h2>
+    <p>
+        Let's see a simple example<br>
+        #include <iostream> <br> 
+            #include<list><br>  
+            using namespace std;<br>  
+            int main() <br> 
+            { <br> 
+             list<char> l1={'j','a','a','v','v','a'}; <br> 
+             list<char> ::iterator itr; <br> 
+             l1.unique();<br>  
+              for(itr=l1.begin();itr!=l1.end();++itr)<br>  
+              std::cout << *itr << " ";<br>  
+                return 0; <br> 
+            }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        java
+    </p>
+    <h2>C++ List resize()</h2>
+    <p>
+        C++ List resize() function changes the size of the list container.
+    </p>
+    <h2>Following are the conditions:</h2>
+    <p>
+        If n is smaller than the current container size then the list container is reduced to n elements, removing all the elements that extends the n space.
+
+        If n is greater than the current container size then the size of the container is increased and more elements can be inserted in the expanded space.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        void resize(size_type n, value_type val )  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        n: It is a new container size.<br>
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example:</h2>
+    <p>
+        Let's see a simple example when n is less than the current container size.<br>
+
+        #include <iostream><br>
+        #include<list><br>  
+        using namespace std; <br> 
+        int main()<br>  
+        { <br> 
+        list<int> li={1,2,3,4,5}; <br> 
+        list<int>::iterator itr; <br> 
+        std::cout << "Content of list li :" << std::endl;<br>  
+        for(itr=li.begin();itr!=li.end();++itr)<br> 
+        cout<<*itr<<","; <br> 
+        li.resize(3);<br>  
+        cout<<'\n';<br>  
+        std::cout << "After resizing,Content of list li :" << std::endl;<br>  
+        for(itr=li.begin();itr!=li.end();++itr)<br>  
+        cout<<*itr<<",";<br>  
+            return 0;<br>  
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        Content of list li :<br>
+        1,2,3,4,5<br>
+        Content of list li :<br>
+        1,2,3
+    </p>
+    <p>
+        In this example, resize() function decreases the size of the list container by 2. Therefore, the last two elements of the list has been removed and output becomes 1,2,3.
+    </p>
+    <h2>C++ List assign()</h2>
+    <p>
+        C++ List assign() function assigns new contents to the list container and replaces the old one with a new one.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        void assign(InputIterator first, OutputIterator last);<br>  
+        void assign(size_type n, value_type val); 
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        first,last: It defines the range of the elements that are to be copied.<br>
+        n: It specifies the new size of the container.<br>
+        val: New value which is to added in a newly constructed space.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example 1</h2>
+    <p>
+        Let's see a simple example<br>
+
+        #include <iostream> <br> 
+        #include<list> <br> 
+        using namespace std; <br> 
+        int main() <br> 
+        { <br> 
+        list<int> li={1,2,3,4};<br>  
+        list<int>::iterator itr;<br>  
+        li.assign(3,10);<br>  
+        for(itr=li.begin();itr!=li.end();++itr)<br>  
+        cout<<*itr<<" ";<br>  
+        return 0;<br>  
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        10 10 10<br>
+        In this example, assign() function replaces the old content with a new content. It assigns '10' value 3 times in the list container.
+    </p>
+    <h2>C++ List emplace()</h2>
+    <p>
+        C++ List emplace() function inserts new element at a specified position and the size of the list is increased by one.
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        iterator emplace(iterator pos, value_type val); 
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        pos: It defines the position where the new element is to be inserted.<br>
+        val: New value to be inserted at a specified position.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It returns an iterator pointing to the newly constructed element.<br>
+    </p>
+    <h2>Example</h2>
+    <p>
+        Let's see a simple example when the new element is inserted in between the list.<br>
+
+        #include <iostream><br>  
+        #include<list><br>  
+        using namespace std;<br>  
+        int main()<br>  
+        {<br>  
+        list<char> li={'j','v','a'};<br>  
+        list<char>::iterator itr=li.begin();<br>  
+        ++itr;<br>  
+        li.emplace(itr,'a');<br>  
+        for(itr=li.begin();itr!=li.end();++itr)<br>  
+        cout<<*itr;<br>  
+        return 0;<br>  
+        }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        java<br>
+        In this example, emplace() function adds a new character at second position
+    </p>
+    <h2>C++ List emplace_back()</h2>
+    <p>
+        C++ List emplace_back() inserts a new element at the end of the list and the size of the list is increased by one.
+        The following illustration shows how this function works:
+        <img src="/img/emplace.png" alt="">
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        void emplace_back(value_type val);  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        val: New value to be inserted at the end of the list.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example</h2>
+    <p>
+        #include <iostream> <br> 
+            #include<list><br>  
+            using namespace std;<br>  
+            int main()<br>  
+            { <br> 
+              list<int> li={1,2,3,4};<br>  
+              list<int>::iterator itr;<br>  
+              li.emplace_back(5);<br>  
+             for(itr=li.begin();itr!=li.end();++itr) <br> 
+              cout<<*itr<<" ";<br>  
+              return 0;<br>  
+             }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        1 2 3 4 5<br>
+        In this example, emplace_back() function adds a new element i.e 5 at the end of the list.
+    </p>
+    <h2>C++ List emplace_front()</h2>
+    <p>
+        C++ List emplace_front function adds a new element in the beginning of the list and the size of the container is increased by one.<br>
+
+        The following illustration shows how this function works:
+        <img src="/img/emplacefront.png" alt="">
+    </p>
+    <h2>Syntax</h2>
+    <p>
+        void emplace_front(value_type val);  
+    </p>
+    <h2>Parameter</h2>
+    <p>
+        val: The value which is to be inserted in the beginning of the list.
+    </p>
+    <h2>Return value</h2>
+    <p>
+        It does not return any value.
+    </p>
+    <h2>Example:</h2>
+    <p>
+        Let's see a simple example:<br>
+        #include <iostream> <br> 
+            #include <list><br>  
+            using namespace std;<br>  
+            int main()<br>  
+            { <br> 
+            list<string> li;<br> 
+            list<string>::iterator itr;<br>  
+            li.emplace_front("language");<br>  
+            li.emplace_front("programming");<br>  
+            li.emplace_front("a");<br>  
+            li.emplace_front("is");<br>  
+            li.emplace_front("C");<br>  
+            for(itr=li.begin();itr!=li.end();++itr)<br>  
+            cout<<*itr<<" ";<br>  
+             return 0;<br>  
+            }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        C is a programming language.<br>
+        In this example, emplace_front() function adds new different strings in the list li and the output becomes "C is a programming language".
+
+
+    </p>
+
+     
+    
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+.SMain{
+    position: relative;
+}
+
+.mainimg {
+   width: 100%;
+    height: 650px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 7%;
+    opacity: .2 ;
+}
+.mainimg2{
+    position: absolute;
+    width: 70%;
+    display: block;
+    margin-left: 15%;
+    margin-right: 20%;
+    top: 15%;
+}
+.titltT{
+    font-size: 50px;
+    text-align: center;
+   text-decoration: underline double black;
+    margin:0 20% 0 20%  ;
+}
+
+
+.container {
+    display: flex; 
+    
+   
+}
+.left-div, .right-div {
+    width: 50%; 
+    padding: 20px;
+    box-sizing: border-box; 
+    border: 2px solid white; 
+    font-size: 32px;
+  
+}
+
+.midline{
+    padding: .8px;
+margin: 50px;
+    border: 5px solid black;
+}
+
+
+
+
+

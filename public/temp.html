@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/stylehome.css">
+  
+
+    <title>Edusa</title>
+  <style>
+    .mainbody{
+        padding: 20rem;
+    }
+    .mainbody img{
+        width: 100px;
+        height: 100px;
+    }
+  </style>
+</head>
+
+<body>
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#hero">
+                        <a href="home.html">
+                            <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+                        </a>
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a href="home.html" data-after="Home">Home</a></li>
+                        <li><a href="#" data-after="COURSES">COURSES</a></li>
+                        <li><a href="#" data-after="Projects">Projects</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="mainbody">
+<!-- Add an input field for the user to enter a number -->
+<input type="number" id="imageNumber" placeholder="Enter a number">
+
+<!-- Display images corresponding to the entered number -->
+<div id="imageSelection">
+    <!-- Images related to numbers -->
+    <img src="/public/img/image1.jpg" alt="Image 1" data-number="1">
+    <img src="/public/img/image2.jpg" alt="Image 2" data-number="2">
+    <img src="/public/img/image3.jpg" alt="Image 3" data-number="3">
+    <img src="/public/img/image4.jpg" alt="Image 4" data-number="4">
+    <img src="/public/img/image5.jpg" alt="Image 5" data-number="5">
+    <!-- Add more images as needed -->
+</div>
+
+<!-- Display the selected image -->
+<h2>Selected Image:</h2>
+<img id="selectedImage" src="" alt="Selected Image">
+
+<!-- Button to set the selected image as profile image -->
+<button id="setProfileImage">Set as Profile Image</button>
+
+    </main>
+
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Add event listener to the input field
+    document.getElementById('imageNumber').addEventListener('change', () => {
+        // Get the entered number
+        const number = parseInt(document.getElementById('imageNumber').value);
+        
+        // Find the corresponding image based on the number
+        const selectedImage = document.querySelector(`img[data-number="${number}"]`);
+        
+        // Display the selected image
+        document.getElementById('selectedImage').src = selectedImage ? selectedImage.src : '';
+    });
+    
+    // Add event listener to the button to set the selected image as profile image
+    document.getElementById('setProfileImage').addEventListener('click', () => {
+        // Get the selected image URL
+        const selectedImageUrl = document.getElementById('selectedImage').src;
+        
+        // Here you can implement code to store the selected image URL in the database
+        // For example, you can use AJAX or fetch API to send a request to your server to store the URL in the database
+        // You need to handle this part on the server-side
+        // Example:
+        // fetch('/storeProfileImage', {
+        //     method: 'POST',
+        //     body: JSON.stringify({ imageUrl: selectedImageUrl }),
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // })
+        // .then(response => {
+        //     if (response.ok) {
+        //         // Image URL stored successfully
+        //         console.log('Profile image stored successfully');
+        //     } else {
+        //         // Error handling
+        //         console.error('Error storing profile image');
+        //     }
+        // })
+        // .catch(error => {
+        //     console.error('Error storing profile image:', error);
+        // });
+    });
+});
+
+   </script>
+
+</body>
+
+</html>

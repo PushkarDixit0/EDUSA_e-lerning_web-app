@@ -1,0 +1,19 @@
+
+.mainstructure{
+padding: 10% 20%;
+  background: rgb(215, 209, 209);
+    text-align: justify;
+}
+.submit{
+
+  width: 20%;
+  height: 5%;
+margin-top:3% ;
+  left: 40%;
+  position: absolute;
+}
+
+.submit:hover{
+  background: rgb(120, 112, 112);
+
+}

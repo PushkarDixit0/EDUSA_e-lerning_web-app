@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylehome.css">
+    <link rel="stylesheet" href="profile.css">
+
+    <title>Edusa</title>
+  
+</head>
+
+<body>
+    <section id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+                    <a href="#hero">
+                        <a href="home.html">
+                            <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+                        </a>
+                    </a>
+                </div>
+                <div class="nav-list">
+                    <div class="hamburger">
+                        <div class="bar"></div>
+                    </div>
+                    <ul>
+                        <li><a href="home.html" data-after="Home">Home</a></li>
+                        <li><a href="courses.html" data-after="COURSES">COURSES</a></li>
+                        <li><a href="#" data-after="Projects">Projects</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mainbody" >
+
+        <img id="selectedImage" src="" alt="Selected Image">
+       <div class="infotext">
+         <img src="/img/profile/maillogo.jpg" alt="" >
+        <h1 id="email"></h1><br>
+        <div>
+         
+          <p id="flname"></p>
+           
+        </div><br>
+           <h1>profession:</h1>
+            <h1 id="profession"></h1><br>
+    
+        <h1>Gender:</h1>
+        <h1 id="gender"></h1>
+    
+       </div>
+        <button id="logoutButton">log out</button>
+      </section>
+    
+
+    <script> document.addEventListener('DOMContentLoaded', () => {
+        // Fetch user profile information from local storage
+        const email = localStorage.getItem('email');
+        const fname = localStorage.getItem('fname');
+        const lname = localStorage.getItem('lname');
+        const profession = localStorage.getItem('profession');
+        const gender = localStorage.getItem('gender');
+
+        // Fetch the number representing the profile image from local storage
+        const profileImgNumber = localStorage.getItem('profileimg');
+
+        // Display user profile information
+       
+        document.getElementById('email').innerText = `${email}`;
+      document.getElementById('flname').innerText = `@${fname}${lname}_EDUSA`;
+    
+      document.getElementById('gender').innerText = `${gender}`;
+      document.getElementById('profession').innerText = `${profession}`;
+
+       
+        // document.getElementById('email').innerText = email;
+        // document.getElementById('fname').innerText = fname;
+        // document.getElementById('lname').innerText = lname;
+        // document.getElementById('gender').innerText = gender;
+        // document.getElementById('profession').innerText = profession;
+
+        // Map the profile image number to the corresponding image source
+        const imageSources = {
+                '1': '/img/profile/image1.jpg',
+                '2': '/img/profile/image2.jpg',
+                '3': '/img/profile/image3.jpg',
+                '4': '/img/profile/image4.jpg',
+                '5': '/img/profile/image5.jpg',
+                '6': '/img/profile/image6.jpg',
+                // Add more mappings as needed
+            };
+
+
+        // Set the selected image as the profile image
+        const selectedImageSrc = imageSources[profileImgNumber];
+        document.getElementById('selectedImage').src = selectedImageSrc || '';
+
+        // Logout functionality
+        document.getElementById('logoutButton').addEventListener('click', () => {
+            // Clear local storage
+            localStorage.removeItem('email');
+            localStorage.removeItem('fname');
+            localStorage.removeItem('lname');
+            localStorage.removeItem('gender');
+            localStorage.removeItem('profession');
+            localStorage.removeItem('profileimg');
+
+            // Redirect to the index page
+            window.location.href = "/index.html"; // Change the path accordingly
+        });
+    });
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- // Fetch data from local storage
+const email = localStorage.getItem('email');
+const fname = localStorage.getItem('fname');
+const lname = localStorage.getItem('lname');
+const gender = localStorage.getItem('gender');
+const profession = localStorage.getItem('profession');
+
+// // Display data in HTML elements
+
+document.getElementById('email').innerText = `${email}`;
+document.getElementById('fname').innerText = `${fname}`;
+document.getElementById('lname').innerText = `${lname}`;
+document.getElementById('gender').innerText = `${gender}`;
+document.getElementById('profession').innerText = `${profession}`;
+
+document.getElementById('logoutButton').addEventListener('click', () => {
+    // Clear local storage
+    localStorage.removeItem('email');
+    localStorage.removeItem('fname');
+    localStorage.removeItem('lname');
+    localStorage.removeItem('gender');
+    localStorage.removeItem('profession');
+    window.location.href = "/index.html"; // Change the path accordingly
+
+});
+}); -->

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylehome.css">
+  <link rel="stylesheet" href="/COURSES.css">
+<link rel="stylesheet" href="/profile.css">
+  <title>Edusa</title>
+ 
+</head>
+
+<body>
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <a href="home.html">
+              <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+            </a>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="home.html" data-after="Home">Home</a></li>
+            <li><a href="courses.html" data-after="COURSES">COURSES</a></li>
+           
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="mainbody" >
+
+    <img id="selectedImage" src="" alt="Selected Image">
+   <div class="infotext">
+     <img src="/img/profile/maillogo.jpg" alt="" >
+    <h1 id="email"></h1><br>
+    <div>
+     
+     <span>UserName:</span> <p id="flname"></p>
+       
+    </div><br>
+       <span>profession:</span>
+        <p id="profession"></p><br>
+
+    <span>Gender:</span>
+    <p id="gender"></p>
+
+   </div>
+    <button id="logoutButton">log out</button>
+  </section>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+
+
+      const queryParams = new URLSearchParams(window.location.search);
+      const email = queryParams.get('email');
+      const fname = queryParams.get('fname');
+      const lname = queryParams.get('lname');
+      const profession = queryParams.get('profession');
+      const gender = queryParams.get('gender');
+       const profileimg = queryParams.get('profileimg');
+       
+
+      // Store values in local storage
+      localStorage.setItem('email', email);
+      localStorage.setItem('fname', fname);
+      localStorage.setItem('lname', lname);
+      localStorage.setItem('profession', profession);
+      localStorage.setItem('gender', gender);
+      localStorage.setItem('profileimg', profileimg);
+       
+      // Display data in <h1> tag
+      document.getElementById('email').innerText = `${email}`;
+      document.getElementById('flname').innerText = `@${fname}${lname}_EDUSA`;
+    
+      document.getElementById('gender').innerText = `${gender}`;
+      document.getElementById('profession').innerText = `${profession}`;
+
+
+
+            // Fetch the number representing the profile image from local storage
+            const profileImgNumber = localStorage.getItem('profileimg');
+
+            // Map the profile image number to the corresponding image source
+            const imageSources = {
+                '1': '/img/profile/image1.jpg',
+                '2': '/img/profile/image2.jpg',
+                '3': '/img/profile/image3.jpg',
+                '4': '/img/profile/image4.jpg',
+                '5': '/img/profile/image5.jpg',
+                '6': '/img/profile/image6.jpg',
+                // Add more mappings as needed
+            };
+
+            // Set the selected image as the profile image
+            const selectedImageSrc = imageSources[profileImgNumber];
+            document.getElementById('selectedImage').src = selectedImageSrc || '';
+
+            // Logout functionality
+            document.getElementById('logoutButton').addEventListener('click', () => {
+                // Clear local storage
+                localStorage.removeItem('email');
+                localStorage.removeItem('fname');
+                localStorage.removeItem('lname');
+                localStorage.removeItem('gender');
+                localStorage.removeItem('profession');
+                localStorage.removeItem('profileimg');
+
+                // Redirect to the index page
+                window.location.href = "/index.html"; // Change the path accordingly
+            });
+        });
+  </script>
+</body>
+
+</html>
+
+
+
+

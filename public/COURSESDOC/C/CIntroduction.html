@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C</title>
+    <link rel="stylesheet" href="/COURSESDOC/COURSESINFILE.css">
+    <link rel="stylesheet" href="/COURSESDOC/COURSEENDSIDE.css">
+</head>
+
+<body>
+    <nav id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+
+                    <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding-top: 3rem;">
+        <h1>C Introduction</h1>
+        <h4>What is C?</h4>
+        <p>C is a general-purpose programming language created by Dennis Ritchie at the Bell Laboratories in 1972.
+           It is a very popular language, despite being old.
+           The main reason for its popularity is because it is a fundamental language in the field of computer science.
+           C is strongly associated with UNIX, as it was developed to write the UNIX operating system.
+        </p>
+        <h4>Get Started With C</h4>
+        <p>
+            To start using C, you need two things:<br>
+
+            A text editor, like Notepad, to write C code<br>
+            A compiler, like GCC, to translate the C code into a language that the computer will understand<br>
+            There are many text editors and compilers to choose from. In this tutorial, we will use an IDE (see below).
+        </p>
+        <h4>C Install IDE</h4>
+        <p>
+            An IDE (Integrated Development Environment) is used to edit AND compile the code.<br>
+
+                Popular IDE's include Code::Blocks, Eclipse, and Visual Studio. These are all free, and they can be used to both edit and debug C code.
+
+                Note: Web-based IDE's can work as well, but functionality is limited.
+
+                We will use Code::Blocks in our tutorial, which we believe is a good place to start.
+
+                You can find the latest version of Codeblocks at http://www.codeblocks.org/. Download the mingw-setup.exe file, which will install the text editor with a compiler.
+        </p>
+        <h4>C Quickstart</h4>
+        <p>
+            Let's create our first C file.
+
+            Open Codeblocks and go to File > New > Empty File.
+
+            Write the following C code and save the file as myfirstprogram.c (File > Save File as):
+        </p>
+        <p>
+            #include <stdio.h><br>
+
+                int main() {<br>
+                  printf("Hello World!");<br>
+                  return 0;<br>
+                }
+        </p>
+        <p>
+            Don't worry if you don't understand the code above - we will discuss it in detail in later chapters. For now, focus on how to run the code.
+
+            In Codeblocks, it should look like this:
+            <img src="/img/Cimg.png" alt="">
+            Then, go to Build > Build and Run to run (execute) the program. The result will look something to this:
+            <img src="/img/Cimg1.png" alt="">
+            Congratulations! You have now written and executed your first C program.
+        <h4>Learning C</h4>
+        <p>
+            When you can use our "Try it Yourself" tool, which shows both the code and the result. This will make it easier for you to understand every part as we move forward:
+        </p>
+        <p>
+            #include <stdio.h><br>
+
+                int main() {<br>
+                  printf("Hello World!");<br>
+                  return 0;<br>
+                }
+        </p>
+        <h4>Syntax</h4>
+        <p>
+            You have already seen the following code a couple of times in the first chapters. Let's break it down to understand it better:
+        </p>
+        <h4>Example:</h4>
+        <p>
+            #include <stdio.h><br>
+
+                int main() {<br>
+                  printf("Hello World!");<br>
+                  return 0;<br>
+                }
+        </p>
+        <h4>Result:</h4>
+        <p>
+            Hello World!
+        </p>
+        </p>
+
+        <div class="code">
+            <p>
+
+                #include <stdio.h>
+
+                    int main() {<br>
+                      printf("Hello World!"); <br>
+                      return 0;<br>
+                    }<br>
+            </p>
+        </div>
+        <h4>Statements</h4>
+        <p>
+            A computer program is a list of "instructions" to be "executed" by a computer.<br>
+            In a programming language, these programming instructions are called statements.<br>
+        </p>
+        <h4>Output (Print Text)</h4>
+        <p>
+            To output values or print text in C, you can use the printf() function:
+        </p>
+        <h4>Example:</h4>
+        <p>
+            #include <stdio.h><br>
+
+                int main() {<br>
+                  printf("Hello World!");<br>
+                  return 0;<br>
+                }
+        </p>
+        <h4>Double Quotes</h4>
+        <p>
+            When you are working with text, it must be wrapped inside double quotations marks "".
+
+            If you forget the double quotes, an error occurs:
+        </p>
+        <h4>Example</h4>
+        <p>
+            printf("This sentence will work!");
+        </p>
+        <p>
+            printf(This sentence will produce an error.);
+        </p>
+        <h4>New Lines</h4>
+        <p>
+            To insert a new line, you can use the \n character:
+        </p>
+        <h4>Example</h4>
+        <p>
+            #include <stdio.h><br>
+
+                int main() {<br>
+                  printf("Hello World!\n");<br>
+                  printf("I am learning C.");<br>
+                  return 0;<br>
+                }
+        </p>
+        <h4>Comments in C</h4>
+        <p>
+            Comments can be used to explain code, and to make it more readable. It can also be used to prevent execution when testing alternative code.<br>
+
+            Comments can be singled-lined or multi-lined.
+        </p>
+        <h4>Single-line Comments</h4>
+        <p>
+            Single-line comments start with two forward slashes (//).
+
+            Any text between // and the end of the line is ignored by the compiler (will not be executed).
+
+            This example uses a single-line comment before a line of code:
+        </p>
+        <h4>Example:</h4>
+        <p>
+            printf("Hello World!");
+        </p>
+        <h4>C Multi-line Comments</h4>
+        <p>
+            Multi-line comments start with /* and ends with */.
+
+            Any text between /* and */ will be ignored by the compiler:
+        </p>
+        <h4>Example:</h4>
+        <p>
+            printf("Hello World!");
+        </p>
+        <h4>C Variables</h4>
+        <p>
+            Variables are containers for storing data values, like numbers and characters.
+
+            In C, there are different types of variables (defined with different keywords), for example:
+
+            int - stores integers (whole numbers), without decimals, such as 123 or -123
+            float - stores floating point numbers, with decimals, such as 19.99 or -19.99
+            char - stores single characters, such as 'a' or 'B'. Characters are surrounded by single quotes
+        </p>
+        <h4>Declaring (Creating) Variables</h4>
+        <p>
+            To create a variable, specify the type and assign it a value:
+        </p>
+        <h4>Syntax</h4>
+        <p>
+            type variableName = value;
+        </p>
+        <p>
+            Where type is one of C types (such as int), and variableName is the name of the variable (such as x or myName). The equal sign is used to assign a value to the variable.
+
+            So, to create a variable that should store a number, look at the following example:
+        </p>
+        <h4>Example:</h4>
+        <p>
+            Create a variable called myNum of type int and assign the value 15 to it:<br>
+            int myNum = 15;
+        </p>
+        <h4>Output Variables:</h4>
+        <p>
+            You learned from the output chapter that you can output values/print text with the printf() function:
+        </p>
+        <h4>output:</h4>
+        <p>
+            printf("Hello World!");
+        </p>
+     
+        <h4>Format Specifiers</h4>
+        <p>Format specifiers are used together with the printf() function to tell the compiler what type of data the variable is storing. It is basically a placeholder for the variable value.
+
+            A format specifier starts with a percentage sign %, followed by a character.
+            
+            For example, to output the value of an int variable, use the format specifier %d surrounded by double quotes (""), inside the printf() function:</p>
+
+            <h4>Example</h4>
+            <p>
+                #include <stdio.h> <br>
+
+                    int main() { <br>
+                      int myNum = 15; <br>
+                      printf("%d", myNum); <br>
+                      return 0; <br>
+                    } 
+            </p>
+            <h4>Change Variable Values</h4>
+            <p>
+                If you assign a new value to an existing variable, it will overwrite the previous value:
+            </p>
+            <h4>Example</h4>
+            <p>
+                int myNum = 15;  // myNum is 15
+                myNum = 10;  // Now myNum is 10
+            </p>
+            <p>
+                You can also assign the value of one variable to another:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int myNum = 15;<br>
+
+                int myOtherNum = 23;<br>
+
+                // Assign the value of myOtherNum (23) to myNum<br>
+                myNum = myOtherNum;<br>
+
+                // myNum is now 23, instead of 15<br>
+                printf("%d", myNum);
+            </p>
+            <p>
+                Or copy values to empty variables:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                // Create a variable and assign the value 15 to it<br>
+                int myNum = 15;<br>
+
+                // Declare a variable without assigning it a value<br>
+                int myOtherNum;<br>
+
+                // Assign the value of myNum to myOtherNum<br>
+                myOtherNum = myNum;<br>
+
+                // myOtherNum now has 15 as a value<br>
+                printf("%d", myOtherNum);
+            </p>
+            <h4>Declare Multiple Variables</h4>
+            <p>
+                To declare more than one variable of the same type, use a comma-separated list:
+            </p>
+            <ph4>Example:</ph4>
+            <p>
+                int x = 5, y = 6, z = 50;<br>
+                printf("%d", x + y + z);
+            </p>
+            <p>
+                You can also assign the same value to multiple variables of the same type:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int x, y, z;<br>
+                x = y = z = 50;<br>
+                printf("%d", x + y + z);
+            </p>
+            <h4>C Variable Names</h4>
+            <p>
+                All C variables must be identified with unique names.
+
+                These unique names are called identifiers.
+
+                Identifiers can be short names (like x and y) or more descriptive names (age, sum, totalVolume).
+
+                Note: It is recommended to use descriptive names in order to create understandable and maintainable code:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                // Good variable name<br>
+                int minutesPerHour = 60;<br>
+
+                // OK, but not so easy to understand what m actually is<br>
+                int m = 60;
+            </p>
+            <p>
+                The general rules for naming variables are:<br>
+
+                Names can contain letters, digits and underscores<br>
+                Names must begin with a letter or an underscore (_)<br>
+                Names are case-sensitive (myVar and myvar are different variables)<br>
+                Names cannot contain whitespaces or special characters like !, #, %, etc.<br>
+                Reserved words (such as int) cannot be used as names
+            </p>
+            <h4>Real-Life Example</h4>
+            <p>
+                Often in our examples, we simplify variable names to match their data type (myInt or myNum for int types, myChar for char types, and so on). This is done to avoid confusion.
+
+                However, if you want a real-life example of how variables can be used, take a look at the following, where we have made a program that stores different data of a college student:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                // Student data<br>
+                int studentID = 15;<br>
+                int studentAge = 23;<br>
+                float studentFee = 75.25;<br>
+                char studentGrade = 'B';<br>
+
+                // Print variables<br>
+                printf("Student id: %d\n", studentID);<br>
+                printf("Student age: %d\n", studentAge);<br>
+                printf("Student fee: %f\n", studentFee);<br>
+                printf("Student grade: %c", studentGrade);
+            </p>
+            <h4>Calculate the Area of a Rectangle:</h4>
+            <p>
+                In this real-life example, we create a program to calculate the area of a rectangle (by multiplying the length and width):
+            </p>
+            <h4>Example:</h4>
+            <p>
+                // Create integer variables<br>
+                int length = 4;<br>
+                int width = 6;<br>
+                int area;<br>
+
+                // Calculate the area of a rectangle<br>
+                area = length * width;<br>
+
+                // Print the variables<br>
+                printf("Length is: %d\n", length);<br>
+                printf("Width is: %d\n", width);<br>
+                printf("Area of the rectangle is: %d", area);
+
+            </p>
+            <h4>Data Types</h4>
+            <p>
+                As explained in the Variables chapter, a variable in C must be a specified data type, and you must use a format specifier inside the printf() function to display it:
+            </p>
+            <h4>Example</h4>
+            <p>
+                #include <stdio.h>
+
+                    int main() { <br>
+                      // Create variables <br>
+                      int myNum = 5;               // Integer (whole number) <br>
+                      float myFloatNum = 5.99;     // Floating point number <br>
+                      char myLetter = 'D';         // Character <br>
+                      
+                      // Print variables <br>
+                      printf("%d\n", myNum); <br>
+                      printf("%f\n", myFloatNum); <br>
+                      printf("%c\n", myLetter); <br>
+                      return 0; <br>
+                    }
+            </p>
+            <h4>Basic Data Types</h4>
+            <p>
+                The data type specifies the size and type of information the variable will store.
+
+                In this tutorial, we will focus on the most basic ones:
+            </p>
+            <table><tr>
+                <th style="width:15%">Data Type</th>
+                <th style="width:15%">Size</th>
+                <th style="width:70%">Description</th>
+                </tr>
+                <tr>
+                <td><code class="w3-codespan" style="padding-left:0">int</code></td>
+                <td>2 or 4 bytes</td>
+                <td>Stores whole numbers, without decimals</td>
+                </tr>
+                <tr>
+                <td><code class="w3-codespan" style="padding-left:0;">float</code></td>
+                <td>4 bytes</td>
+                <td>Stores fractional numbers, containing one or more decimals. Sufficient for 
+                storing 6-7 decimal digits</td>
+                </tr>
+                <tr>
+                <td><code class="w3-codespan" style="padding-left:0">double</code></td>
+                <td>8 bytes</td>
+                <td>Stores fractional numbers, containing one or more decimals. Sufficient for 
+                storing 15 decimal digits</td>
+                </tr>
+                <tr>
+                <td><code class="w3-codespan" style="padding-left:0">char</code></td>
+                <td>1 byte</td>
+                <td>Stores a single character/letter/number, or ASCII values</td>
+                </tr>
+            </table>
+            <h4>The char Type</h4>
+            <p>
+                The char data type is used to store a single character.
+
+                The character must be surrounded by single quotes, like 'A' or 'c', and we use the %c format specifier to print it:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                char myGrade = 'A';
+                printf("%c", myGrade);
+            </p>
+            <p>
+                Alternatively, if you are familiar with ASCII, you can use ASCII values to display certain characters. Note that these values are not surrounded by quotes (''), as they are numbers:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                char a = 65, b = 66, c = 67;<br>
+                printf("%c", a);<br>
+                printf("%c", b);<br>
+                printf("%c", c);
+            </p>
+            <h4>Numeric Types</h4>
+            <p>
+                Use int when you need to store a whole number without decimals, like 35 or 1000, and float or double when you need a floating point number (with decimals), like 9.99 or 3.14515.
+            </p>
+            <h4>int</h4>
+            <p>
+                int myNum = 1000;<br>
+                printf("%d", myNum);
+            </p>
+            <h4>float</h4>
+            <p>
+                float myNum = 5.75;<br>
+                printf("%f", myNum);
+            </p>
+            <h4>double</h4>
+            <p>
+                double myNum = 19.99;<br>
+                printf("%lf", myNum);
+            </p>
+            <h4>Scientific Numbers</h4>
+            <p>
+                A floating point number can also be a scientific number with an "e" to indicate the power of 10:
+            </p>
+            <h4>Example</h4>
+            <p>
+                float f1 = 35e3;<br>
+                double d1 = 12E4;<br>
+
+                printf("%f\n", f1);<br>
+                printf("%lf", d1);
+            </p>
+            <h4>Set Decimal Precision</h4>
+            <p>
+                You have probably already noticed that if you print a floating point number, the output will show many digits after the decimal point:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                float myFloatNum = 3.5;<br>
+                double myDoubleNum = 19.99;<br>
+
+                printf("%f\n", myFloatNum); // Outputs 3.500000<br>
+                printf("%lf", myDoubleNum); // Outputs 19.990000
+            </p>
+            <p>
+                If you want to remove the extra zeros (set decimal precision), you can use a dot (.) followed by a number that specifies how many digits that should be shown after the decimal point:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                float myFloatNum = 3.5;<br>
+
+                printf("%f\n", myFloatNum);   // Default will show 6 digits after the decimal point<br>
+                printf("%.1f\n", myFloatNum); // Only show 1 digit<br>
+                printf("%.2f\n", myFloatNum); // Only show 2 digits<br>
+                printf("%.4f", myFloatNum);   // Only show 4 digits
+            </p>
+            <h4>Get the Memory Size</h4>
+            <p>
+                We introduced in the data types chapter that the memory size of a variable varies depending on the type:
+            </p>
+            <p>
+                <div class="w3-responsive" style="margin:-16px 0">
+                    <table class="ws-table-all notranslate">
+                    <tbody><tr>
+                    <th style="width:25%">Data Type</th>
+                    <th style="width:75%">Size</th>
+                    </tr>
+                    <tr>
+                    <td><code class="w3-codespan" style="padding-left:0">int</code></td>
+                    <td>2 or 4 bytes</td>
+                    </tr>
+                    <tr>
+                    <td><code class="w3-codespan" style="padding-left:0;">float</code></td>
+                    <td>4 bytes</td>
+                    </tr>
+                    <tr>
+                    <td><code class="w3-codespan" style="padding-left:0">double</code></td>
+                    <td>8 bytes</td>
+                    </tr>
+                    <tr>
+                    <td><code class="w3-codespan" style="padding-left:0">char</code></td>
+                    <td>1 byte</td>
+                    </tr>
+                    </tbody>
+                    </table>
+                    </div>
+            </p>
+            <p>
+                The memory size refers to how much space a type occupies in the computer's memory.
+
+                To actually get the size (in bytes) of a data type or variable, use the sizeof operator:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int myInt;<br>
+                float myFloat;<br>
+                double myDouble;<br>
+                char myChar;<br>
+
+                printf("%lu\n", sizeof(myInt));<br>
+                printf("%lu\n", sizeof(myFloat));<br>
+                printf("%lu\n", sizeof(myDouble));<br>
+                printf("%lu\n", sizeof(myChar));
+            </p>
+            <h4>Real-Life Example</h4>
+            <p>
+                Here's a real-life example of using different data types, to calculate and output the total cost of a number of items:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                // Create variables of different data types<br>
+                int items = 50;<br>
+                float cost_per_item = 9.99;<br>
+                float total_cost = items * cost_per_item;<br>
+                char currency = '$';<br>
+
+                // Print variables<br>
+                printf("Number of items: %d\n", items);<br>
+                printf("Cost per item: %.2f %c\n", cost_per_item, currency);<br>
+                printf("Total cost = %.2f %c\n", total_cost, currency);
+            </p>
+            <h4>Type Conversion</h4>
+            <p>
+                Sometimes, you have to convert the value of one data type to another type. This is known as type conversion.
+
+                For example, if you try to divide two integers, 5 by 2, you would expect the result to be 2.5. But since we are working with integers (and not floating-point values), the following example will just output 2:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int x = 5;<br>
+                int y = 2;<br>
+                int sum = 5 / 2;<br>
+
+                printf("%d", sum); // Outputs 2
+            </p>
+            <p>
+                To get the right result, you need to know how type conversion works.
+
+                There are two types of conversion in C:
+
+                Implicit Conversion (automatically)
+                Explicit Conversion (manually)
+            </p>
+            <h4>Implicit Conversion</h4>
+            <p>
+                Implicit conversion is done automatically by the compiler when you assign a value of one type to another.
+
+                For example, if you assign an int value to a float type:
+            </p>
+            <h4>Example</h4>
+            <p>
+                // Automatic conversion: int to float<br>
+                float myFloat = 9;<br>
+
+                printf("%f", myFloat); // 9.000000
+            </p>
+            <p>
+                As you can see, the compiler automatically converts the int value 9 to a float value of 9.000000.
+
+                This can be risky, as you might lose control over specific values in certain situations.
+
+                Especially if it was the other way around - the following example automatically converts the float value 9.99 to an int value of 9:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                // Automatic conversion: float to int<br>
+                int myInt = 9.99;<br>
+                printf("%d", myInt); // 9
+            </p>
+            <p>
+                What happened to .99? We might want that data in our program! So be careful. It is important that you know how the compiler work in these situations, to avoid unexpected results.
+
+                As another example, if you divide two integers: 5 by 2, you know that the sum is 2.5. And as you know from the beginning of this page, if you store the sum as an integer, the result will only display the number 2. Therefore, it would be better to store the sum as a float or a double, right?
+            </p>
+            <h4>Example:</h4>
+            <p>
+                float sum = 5 / 2;<br>
+
+                printf("%f", sum); // 2.000000
+            </p>
+            <h4>Constants</h4>
+            <p>
+                If you don't want others (or yourself) to change existing variable values, you can use the const keyword.
+
+                This will declare the variable as "constant", which means unchangeable and read-only:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                const int myNum = 15;  // myNum will always be 15
+                myNum = 10;  // error: assignment of read-only variable 'myNum'
+            </p>
+            <p>
+                You should always declare the variable as constant when you have values that are unlikely to change:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                const int minutesPerHour = 60;<br>
+                const float PI = 3.14;
+            </p>
+            <h4>Notes On Constants</h4>
+            <p>
+                When you declare a constant variable, it must be assigned with a value:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                const int minutesPerHour = 60;<br>
+                This however, will not work:<br>
+
+                const int minutesPerHour;<br>
+                minutesPerHour = 60; // error
+            </p>
+
+            <h4>Operators</h4>
+            <p>
+                Operators are used to perform operations on variables and values.
+
+                In the example below, we use the + operator to add together two values:
+            </p>
+            <h4>Example</h4>
+            <p>
+                #include <stdio.h>
+
+                    int main() { <br>
+                      int myNum = 100 + 50; <br>
+                      printf("%d", myNum); <br>
+                      return 0; <br>
+                    }
+            </p>
+            <h4>Arithmetic Operators</h4>
+            <p>
+                Arithmetic operators are used to perform common mathematical operations.
+            </p>
+            <table><tr>
+                <th style="width:15%">Operator</th>
+                <th style="width:18%">Name</th>
+                <th style="width:40%">Description</th>
+                <th style="width:17%;">Example</th>
+                <th style="width:10%;text-align:right">Try it</th>
+                </tr>
+                <tr>
+                <td>+</td>
+                <td>Addition</td>
+                <td>Adds together two values</td>
+                <td>x + y</td>
+                <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryc.php?filename=demo_oper_add">Try it »</a></td>
+                </tr>
+                <tr>
+                <td>-</td>
+                <td>Subtraction</td>
+                <td>Subtracts one value from another</td>
+                <td>x - y</td>
+                <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryc.php?filename=demo_oper_sub">Try it »</a></td>
+                </tr>
+                <tr>
+                <td>*</td>
+                <td>Multiplication</td>
+                <td>Multiplies two values</td>
+                <td>x * y</td>
+                <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryc.php?filename=demo_oper_mult">Try it »</a></td>
+                </tr>
+                <tr>
+                <td>/</td>
+                <td>Division</td>
+                <td>Divides one value by another</td>
+                <td>x / y</td>
+                <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryc.php?filename=demo_oper_div">Try it »</a></td>
+                </tr>
+                <tr>
+                <td>%</td>
+                <td>Modulus</td>
+                <td>Returns the division remainder</td>
+                <td>x % y</td>
+                <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryc.php?filename=demo_oper_mod">Try it »</a></td>
+                </tr>
+                <tr>
+                <td>++</td>
+                <td>Increment</td>
+                <td>Increases the value of a variable by 1</td>
+                <td>++x</td>
+                <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryc.php?filename=demo_oper_inc">Try it »</a></td>
+                </tr>
+                <tr>
+                <td>--</td>
+                <td>Decrement</td>
+                <td>Decreases the value of a variable by 1</td>
+                <td>--x</td>
+                <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryc.php?filename=demo_oper_dec">Try it »</a></td>
+                </tr>
+            </table>
+
+            <h4>Booleans</h4>
+            <p>
+                Very often, in programming, you will need a data type that can only have one of two values, like: <br>
+
+                YES / NO <br>
+                ON / OFF <br>
+                TRUE / FALSE <br>
+                For this, C has a bool data type, which is known as booleans. <br>
+
+                Booleans represent values that are either true or false.
+            </p>
+            <h4>Boolean Variables</h4>
+            <p>
+                In C, the bool type is not a built-in data type, like int or char.
+
+                It was introduced in C99, and you must import the following header file to use it:<br>
+                #include <stdbool.h>
+            </p>
+            <p>
+                A boolean variable is declared with the bool keyword and can only take the values true or false:<br>
+                bool isProgrammingFun = true;<br>
+                bool isFishTasty = false;
+            </p>
+            <p>
+                Before trying to print the boolean variables, you should know that boolean values are returned as integers:
+
+                1 (or any other number that is not 0) represents true
+                0 represents false
+                Therefore, you must use the %d format specifier to print a boolean value:
+            </p>
+            <h4>Example</h4>
+            <p>
+                // Create boolean variables<br>
+                bool isProgrammingFun = true;<br>
+                bool isFishTasty = false;<br>
+
+                // Return boolean values<br>
+                printf("%d", isProgrammingFun);   // Returns 1 (true)<br>
+                printf("%d", isFishTasty);        // Returns 0 (false)<br>
+                However, it is more common to return a boolean value by comparing values and variables.
+            </p>
+            <h4>Comparing Values and Variables</h4>
+            <p>
+                Comparing values are useful in programming, because it helps us to find answers and make decisions.
+
+                For example, you can use a comparison operator, such as the greater than (>) operator, to compare two values:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                printf("%d", 10 > 9);  // Returns 1 (true) because 10 is greater than 9
+            </p>
+            <h4>Real Life Example</h4>
+            <p>
+                Let's think of a "real life example" where we need to find out if a person is old enough to vote.
+
+                In the example below, we use the >= comparison operator to find out if the age (25) is greater than OR equal to the voting age limit, which is set to 18:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int myAge = 25;
+                int votingAge = 18;
+
+                printf("%d", myAge >= votingAge); // Returns 1 (true), meaning 25 year olds are allowed to vote!
+            </p>
+            <p>
+                Cool, right? An even better approach (since we are on a roll now), would be to wrap the code above in an if...else statement, so we can perform different actions depending on the result:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                Output "Old enough to vote!" if myAge is greater than or equal to 18. Otherwise output "Not old enough to vote.":<br>
+                int myAge = 25;<br>
+                int votingAge = 18;<br>
+
+                if (myAge >= votingAge) {<br>
+                printf("Old enough to vote!");<br>
+                } else {<br>
+                printf("Not old enough to vote.");<br>
+                }
+            </p>
+            
+            <h4>Conditions and If Statements</h4>
+            <p>
+                You have already learned that C supports the usual logical conditions from mathematics: <br>
+
+                Less than: a < b <br>
+                Less than or equal to: a <= b <br>
+                reater than: a > b <br>
+                Greater than or equal to: a >= b <br>
+                Equal to a == b <br>
+                Not Equal to: a != b <br>
+                You can use these conditions to perform different actions for different decisions. <br>
+
+                C has the following conditional statements: <br>
+
+                Use if to specify a block of code to be executed, if a specified condition is true <br>
+                Use else to specify a block of code to be executed, if the same condition is false <br>
+                Use else if to specify a new condition to test, if the first condition is false <br>
+                Use switch to specify many alternative blocks of code to be executed 
+                
+            </p>
+            <h4>The if Statement</h4>
+            <p>
+                Use the if statement to specify a block of code to be executed if a condition is true.
+            </p>
+            <h4>Syntax</h4>
+            <p>
+                if (condition) {<br>
+                    // block of code to be executed if the condition is true<br>
+                  }
+            </p>
+            <h4>The else Statement</h4>
+            <p>
+                Use the else statement to specify a block of code to be executed if the condition is false.
+            </p>
+            <h4>Syntax</h4>
+            <p>
+                if (condition) {<br>
+                    // block of code to be executed if the condition is true <br>
+                  } else { <br>
+                    // block of code to be executed if the condition is false <br>
+                  }
+            </p>
+            <h4>Example</h4>
+            <p>
+                int time = 20;<br>
+                if (time < 18) {<br>
+                printf("Good day.");<br>
+                } else {<br>
+                printf("Good evening.");<br>
+                }<br>
+                // Outputs "Good evening."
+            </p>
+            <h4>The else if Statement</h4>
+            <p>
+                Use the else if statement to specify a new condition if the first condition is false.
+            </p>
+            <h4>Syntax</h4>
+            <p>
+                if (condition1) {<br>
+                    // block of code to be executed if condition1 is true<br>
+                  } else if (condition2) {<br>
+                    // block of code to be executed if the condition1 is false and condition2 is true<br>
+                  } else {<br>
+                    // block of code to be executed if the condition1 is false and condition2 is false<br>
+                  }
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int time = 22;<br>
+                if (time < 10) {<br>
+                printf("Good morning.");<br>
+                } else if (time < 20) {<br>
+                printf("Good day.");<br>
+                } else {<br>
+                printf("Good evening.");<br>
+                }<br>
+                // Outputs "Good evening."
+            </p>
+            <h4>Short Hand If...Else (Ternary Operator)</h4>
+            <p>
+                There is also a short-hand if else, which is known as the ternary operator because it consists of three operands. It can be used to replace multiple lines of code with a single line. It is often used to replace simple if else statements:
+            </p>
+            <h4>Syntax</h4>
+            <p>
+                variable = (condition) ? expressionTrue : expressionFalse;
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int time = 20;<br>
+                if (time < 18) {<br>
+                printf("Good day.");<br>
+                } else {<br>
+                printf("Good evening.");<br>
+                }
+            </p>
+            <h4>Real-Life Examples</h4>
+            <p>
+                This example shows how you can use if..else to "open a door" if the user enters the correct code:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int doorCode = 1337;<br>
+
+                if (doorCode == 1337) {<br>
+                printf("Correct code.\nThe door is now open.");<br>
+                } else {<br>
+                printf("Wrong code.\nThe door remains closed.");<br>
+                }
+            </p>
+            <p>
+                This example shows how you can use if..else to find out if a number is positive or negative:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int myNum = 10; // Is this a positive or negative number?<br>
+
+                if (myNum > 0) {<br>
+                printf("The value is a positive number.");<br>
+                } else if (myNum < 0) {<br>
+                printf("The value is a negative number.");<br>
+                } else {<br>
+                printf("The value is 0.");<br>
+                }
+            </p>
+            <h4>Switch Statement</h4>
+            <p>
+                Instead of writing many if..else statements, you can use the switch statement.
+
+                The switch statement selects one of many code blocks to be executed:
+            </p>
+            <h4>Syntax</h4>
+            <p>
+                switch (expression) {<br>
+                    case x:<br>
+                      // code block<br>
+                      break;<br>
+                    case y:<br>
+                      // code block<br>
+                      break;<br>
+                    default:<br>
+                      // code block<br>
+                  }
+            </p>
+            <p>
+                This is how it works:<br>
+
+                The switch expression is evaluated once
+                The value of the expression is compared with the values of each case
+                If there is a match, the associated block of code is executed
+                The break statement breaks out of the switch block and stops the execution
+                The default statement is optional, and specifies some code to run if there is no case match
+                The example below uses the weekday number to calculate the weekday name:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int day = 4;<br>
+
+                switch (day) {<br>
+                case 1:<br>
+                    printf("Monday");<br>
+                    break;<br>
+                case 2:<br>
+                    printf("Tuesday");<br>
+                    break;<br>
+                case 3:<br>
+                    printf("Wednesday");<br>
+                    break;<br>
+                case 4:<br>
+                    printf("Thursday");<br>
+                    break;<br>
+                case 5:<br>
+                    printf("Friday");<br>
+                    break;<br>
+                case 6:<br>
+                    printf("Saturday");<br>
+                    break;<br>
+                case 7:<br>
+                    printf("Sunday");<br>
+                    break;<br>
+                }<br>
+
+                // Outputs "Thursday" (day 4)
+            </p>
+            <h4>The default Keyword</h4>
+            <p>
+                The default keyword specifies some code to run if there is no case match:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int day = 4;<br>
+
+                switch (day) {<br>
+                case 6:<br>
+                    printf("Today is Saturday");<br>
+                    break;<br>
+                case 7:<br>
+                    printf("Today is Sunday");<br>
+                    break;<br>
+                default:<br>
+                    printf("Looking forward to the Weekend");<br>
+                }<br>
+
+                // Outputs "Looking forward to the Weekend"
+            </p>
+            <h4>Loops</h4>
+            <p>
+                Loops can execute a block of code as long as a specified condition is reached.
+
+                Loops are handy because they save time, reduce errors, and they make code more readable.
+            </p>
+            <h4>While Loop</h4>
+            <p>
+                The while loop loops through a block of code as long as a specified condition is true:
+            </p>
+            <h4>Syntax:</h4>
+            <p>
+                while (condition) {<br>
+                    // code block to be executed<br>
+                  }
+            </p>
+            <p>
+                In the example below, the code in the loop will run, over and over again, as long as a variable (i) is less than 5:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int i = 0;<br>
+
+                while (i < 5) {<br>
+                printf("%d\n", i);<br>
+                i++;<br>
+                }
+            </p>
+            <h4>The Do/While Loop</h4>
+            <p>
+                The do/while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
+            </p>
+            <h4>Syntax</h4>
+            <p>
+                do {<br>
+                    // code block to be executed<br>
+                }<br>
+                  while (condition);
+            </p>
+            <p>
+                The example below uses a do/while loop. The loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int i = 0;<br>
+
+                do {<br>
+                printf("%d\n", i);<br>
+                i++;<br>
+                }<br>
+                while (i < 5);
+            </p>
+            <h4>Real-Life Examples</h4>
+            <p>
+                To demonstrate a practical example of the while loop, we have created a simple "countdown" program:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int countdown = 3;<br>
+
+                while (countdown > 0) {<br>
+                printf("%d\n", countdown);<br>
+                countdown--;<br>
+                }<br>
+
+                printf("Happy New Year!!\n");
+            </p>
+            <p>
+                To demonstrate a practical example of the while loop combined with an if else statement, let's say we play a game of Yatzy:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                Print "Yatzy!" If the dice number is 6:
+            </p>
+            <p>
+                int dice = 1;<br>
+
+                while (dice <= 6) {<br>
+                if (dice < 6) {<br>
+                    printf("No Yatzy\n");<br>
+                } else {<br>
+                    printf("Yatzy!\n");<br>
+                }<br>
+                dice = dice + 1;<br>
+                }
+            </p>
+            <h4>For Loop</h4>
+            <p>
+                When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop:
+            </p>
+            <h4>Syntax</h4>
+            <p>
+                for (expression 1; expression 2; expression 3) {<br>
+                    // code block to be executed<br>
+                  }
+            </p>
+            <p>
+                Expression 1 is executed (one time) before the execution of the code block.
+
+                Expression 2 defines the condition for executing the code block.
+
+                Expression 3 is executed (every time) after the code block has been executed.
+
+                The example below will print the numbers 0 to 4:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int i;<br>
+
+                for (i = 0; i < 5; i++) {<br>
+                printf("%d\n", i);<br>
+                }
+            </p>
+            <h4>Nested Loops</h4>
+            <p>
+                It is also possible to place a loop inside another loop. This is called a nested loop.
+
+                The "inner loop" will be executed one time for each iteration of the "outer loop":
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int i, j;<br>
+
+                    // Outer loop<br>
+                    for (i = 1; i <= 2; ++i) {<br>
+                    printf("Outer: %d\n", i);  // Executes 2 times<br>
+
+                    // Inner loop<br>
+                    for (j = 1; j <= 3; ++j) {<br>
+                        printf(" Inner: %d\n", j);  // Executes 6 times (2 * 3)<br>
+                    }<br>
+                    }
+            </p>
+            <h4>Real-Life Examples</h4>
+            <p>
+                To demonstrate a practical example of the for loop, let's create a program that counts to 100 by tens:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                for (i = 0; i <= 100; i += 10) {<br>
+                    printf("%d\n", i);<br>
+                  }
+            </p>
+            <p>
+                In this examlpe, we create a program that only print even values between 0 and 10:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                for (i = 0; i <= 10; i = i + 2) {<br>
+                    printf("%d\n", i);<br>
+                  }
+            </p>
+            <h4>Break</h4>
+            <p>
+                You have already seen the break statement used in an earlier chapter of this tutorial. It was used to "jump out" of a switch statement.
+
+                The break statement can also be used to jump out of a loop.
+
+                This example jumps out of the for loop when i is equal to 4:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int i;<br>
+
+                for (i = 0; i < 10; i++) {<br>
+                if (i == 4) {<br>
+                    break;<br>
+                }<br>
+                printf("%d\n", i);<br>
+                }
+            </p>
+            <h4>Continue</h4>
+            <p>
+                The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+
+                This example skips the value of 4:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int i;<br>
+
+                for (i = 0; i < 10; i++)<br>
+                if (i == 4) {<br>
+                    continue;<br>
+                }<br>
+                printf("%d\n", i);<br>
+                }
+            </p>
+            <h4>Break and Continue in While Loop</h4>
+            <p>
+                You can also use break and continue in while loops:
+            </p>
+            <h4>Break Example:</h4>
+            <p>
+                int i = 0;<br>
+
+                while (i < 10) {<br>
+                if (i == 4) {<br>
+                    break;<br>
+                }<br>
+                printf("%d\n", i);<br>
+                i++;<br>
+                }
+            </p>
+            <h4>Arrays</h4>
+            <p>
+                Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+
+                To create an array, define the data type (like int) and specify the name of the array followed by square brackets [].
+
+                To insert values to it, use a comma-separated list, inside curly braces:
+            </p>
+            <p>
+                int myNumbers[] = {25, 50, 75, 100};
+            </p>
+            <h4>Access the Elements of an Array</h4>
+            <p>
+                To access an array element, refer to its index number.
+
+                Array indexes start with 0: [0] is the first element. [1] is the second element, etc.
+
+                This statement accesses the value of the first element [0] in myNumbers:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int myNumbers[] = {25, 50, 75, 100};<br>
+                printf("%d", myNumbers[0]);<br>
+
+                // Outputs 25
+            </p>
+            <h4>Change an Array Element</h4>
+            <p>
+                To change the value of a specific element, refer to the index number:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                myNumbers[0] = 33;
+            </p>
+            <h4>Get Array Size or Length</h4>
+            <p>
+                To get the size of an array, you can use the sizeof operator:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int myNumbers[] = {10, 25, 50, 75, 100};<br>
+                printf("%lu", sizeof(myNumbers)); // Prints 20
+            </p>
+            <p>
+                It is because the sizeof operator returns the size of a type in bytes.
+
+                You learned from the Data Types chapter that an int type is usually 4 bytes, so from the example above, 4 x 5 (4 bytes x 5 elements) = 20 bytes.
+
+                Knowing the memory size of an array is great when you are working with larger programs that require good memory management.
+
+                But when you just want to find out how many elements an array has, you can use the following formula (which divides the size of the array by the size of one array element):
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int myNumbers[] = {10, 25, 50, 75, 100};<br>
+                int length = sizeof(myNumbers) / sizeof(myNumbers[0]);<br>
+
+                printf("%d", length);  // Prints 5
+            </p>
+            <h4>Making Better Loops</h4>
+            <p>
+                In the array loops section in the previous chapter, we wrote the size of the array in the loop condition (i < 4). This is not ideal, since it will only work for arrays of a specified size.
+
+                However, by using the sizeof formula from the example above, we can now make loops that work for arrays of any size, which is more sustainable.
+
+                Instead of writing:
+            </p>
+            <h4>Example:</h4>
+            <p>
+                int myNumbers[] = {25, 50, 75, 100};
+                int i;
+
+                for (i = 0; i < 4; i++) {
+                printf("%d\n", myNumbers[i]);
+                }
+            </p>
+            <h4>Multidimensional Arrays</h4>
+            <p>
+                In the previous chapter, you learned about arrays, which is also known as single dimension arrays. These are great, and something you will use a lot while programming in C. However, if you want to store data as a tabular form, like a table with rows and columns, you need to get familiar with multidimensional arrays.
+                A multidimensional array is basically an array of arrays.
+
+                Arrays can have any number of dimensions. In this chapter, we will introduce the most common; two-dimensional arrays (2D).
+            </p>
+            <h4>Two-Dimensional Arrays</h4>
+            <p>
+                A 2D array is also known as a matrix (a table of rows and columns).
+
+                To create a 2D array of integers, take a look at the following example:<br>
+                int matrix[2][3] = { {1, 4, 2}, {3, 6, 8} };
+            </p>
+            <p>
+                The first dimension represents the number of rows [2], while the second dimension represents the number of columns [3]. The values are placed in row-order, and can be visualized like this:
+                <img src="/img/multidimentional.png" alt="">
+            
+            </p>
+            
+            <h4>C Functions</h4>
+            <p>
+                A function is a block of code which only runs when it is called.
+
+                You can pass data, known as parameters, into a function.
+
+                Functions are used to perform certain actions, and they are important for reusing code: Define the code once, and use it many times.
+
+            </p>
+            <h4>Predefined Functions</h4>
+            <p>
+                So it turns out you already know what a function is. You have been using it the whole time while studying this tutorial!
+
+                For example, main() is a function, which is used to execute code, and printf() is a function; used to output/print text to the screen:
+            </p>
+            <p>
+                #include <stdio.h><br>
+
+                    int main() {<br>
+                      printf("Hello World!");<br>
+                      return 0;<br>
+                    }
+            </p>
+            <h4>Create a Function</h4>
+            <p>
+                To create (often referred to as declare) your own function, specify the name of the function, followed by parentheses () and curly brackets {}:
+            </p>
+            <p>
+                void myFunction() {<br>
+                    // code to be executed<br>
+                  }
+            </p>
+            <h4>Parameters and Arguments</h4>
+            <p>
+                Information can be passed to functions as a parameter. Parameters act as variables inside the function.
+
+                Parameters are specified after the function name, inside the parentheses. You can add as many parameters as you want, just separate them with a comma:
+            </p>
+            <h4>Syntax</h4>
+            <p>
+                returnType functionName(parameter1, parameter2, parameter3) { <br>
+                    // code to be executed <br>
+                  }
+            </p>
+            <p>
+                The following function that takes a string of characters with name as parameter. 
+                When the function is called, we pass along a name, which is used inside the function to print "Hello" and the name of each person.
+            </p>
+            <h4>Example</h4>
+            <p>
+                #include <stdio.h> <br>
+
+                    void myFunction(char name[]) { <br>
+                      printf("Hello %s\n", name); <br>
+                    } <br>
+                    
+                    int main() { <br>
+                      myFunction("Liam"); <br>
+                      myFunction("Jenny"); <br>
+                      myFunction("Anja"); <br>
+                      return 0; <br>
+                    }
+            </p>
+            <h4>Recursion</h4>
+            <p>
+                Recursion is the technique of making a function call itself. This technique provides a way to break complicated problems down into simple problems which are easier to solve.
+
+                Recursion may be a bit difficult to understand. The best way to figure out how it works is to experiment with it.
+            </p>
+            <h4>Recursion Example</h4>
+            <p>
+                Adding two numbers together is easy to do, but adding a range of numbers is more complicated. In the following example, recursion is used to add a range of numbers together by breaking it down into the simple task of adding two numbers:
+            </p>
+            <p>
+                int sum(int k); <br>
+
+                int main() { <br>
+                int result = sum(10); <br>
+                printf("%d", result); <br>
+                return 0; <br>
+                } <br>
+
+                int sum(int k) { <br>
+                if (k > 0) { <br>
+                    return k + sum(k - 1); <br>
+                } else { <br>
+                    return 0; <br>
+                } <br>
+                }
+            </p>
+            <h4>File Handling</h4>
+            <p>
+                In C, you can create, open, read, and write to files by declaring a pointer of type FILE, and use the fopen() function:
+
+                FILE *fptr
+                fptr = fopen(filename, mode);
+            </p>
+            <p>
+                FILE is basically a data type, and we need to create a pointer variable to work with it (fptr). For now, this line is not important. It's just something you need when working with files.
+
+                To actually open a file, use the fopen() function, which takes two parameters:
+            </p>
+            <p>
+                <table class="ws-table-all notranslate">
+                    <tbody>
+                    <tr>
+                    <th style="width:26%">Parameter</th>
+                    <th style="width:74%">Description</th>
+                    </tr>
+                    <tr>
+                    <td><em>filename</em></td>
+                    <td>The name of the actual file you want to open (or create), like <code class="w3-codespan">filename.txt</code></td>
+                    </tr>
+                    <tr>
+                    <td><em>mode</em></td>
+                    <td>
+                    A single character, which represents 
+                      what you want to do with the file (read, write or append):
+                      <p>
+                        <code class="w3-codespan">w</code> - Writes to a file<br>
+                        <code class="w3-codespan">a</code> - Appends new data to a file<br>
+                        <code class="w3-codespan">r</code> - Reads from a file
+                    </p>
+                      </td>
+                    </tr>
+                    </tbody>
+                    </table>
+            </p>
+            <h4>Create a File</h4>
+            <p>
+                To create a file, you can use the w mode inside the fopen() function.
+
+                The w mode is used to write to a file. However, if the file does not exist, it will create one for you:
+            </p>
+            <h4>Example</h4>
+            <p>
+                FILE *fptr; <br>
+
+                // Create a file <br>
+                fptr = fopen("filename.txt", "w"); <br>
+
+                // Close the file <br>
+                fclose(fptr); 
+            </p>
+            <h4>Write To a File</h4>
+            <p>
+                Let's use the w mode from the previous chapter again, and write something to the file we just created.
+
+                The w mode means that the file is opened for writing. To insert content to it, you can use the fprintf() function and add the pointer variable (fptr in our example) and some text:
+            </p>
+            <p>
+                FILE *fptr; <br>
+
+                // Open a file in writing mode <br>
+                fptr = fopen("filename.txt", "w"); <br>
+
+                // Write some text to the file <br>
+                fprintf(fptr, "Some text"); <br>
+
+                // Close the file <br>
+                fclose(fptr); <br>
+            </p>
+            <h4>Read a File</h4>
+            <p>
+                In the previous chapter, we wrote to a file using w and a modes inside the fopen() function.
+
+                To read from a file, you can use the r mode:
+            </p>
+            <p>
+                FILE *fptr; <br>
+
+                // Open a file in read mode <br>
+                fptr = fopen("filename.txt", "r");
+            </p>
+            <p>
+                Next, we need to create a string that should be big enough to store the content of the file.
+
+                For example, let's create a string that can store up to 100 characters:
+            </p>
+            <p>
+                FILE *fptr; <br>
+
+                // Open a file in read mode <br>
+                fptr = fopen("filename.txt", "r"); <br>
+
+                // Store the content of the file <br>
+                char myString[100];
+            </p>
+            <p>
+                In order to read the content of filename.txt, we can use the fgets() function.
+
+                The fgets() function takes three parameters:
+            </p>
+            <p>
+                The first parameter specifies where to store the file content, which will be in the myString array we just created.
+                The second parameter specifies the maximum size of data to read, which should match the size of myString (100).
+                The third parameter requires a file pointer that is used to read the file (fptr in our example).
+                Now, we can print the string, which will output the content of the file:
+            </p>
+            <p>
+                FILE *fptr; <br>
+
+                // Open a file in read mode <br>
+                fptr = fopen("filename.txt", "r"); <br>
+
+                // Store the content of the file <br>
+                char myString[100]; <br>
+
+                // Read the content and store it inside myString <br>
+                fgets(myString, 100, fptr); <br>
+
+                // Print the file content <br>
+                printf("%s", myString); <br>
+
+                // Close the file <br>
+                fclose(fptr);
+            </p>
+            <h4>Structures</h4>
+            <p>
+                Structures (also called structs) are a way to group several related variables into one place. Each variable in the structure is known as a member of the structure.
+
+                Unlike an array, a structure can contain many different data types (int, float, char, etc.).
+
+            </p>
+            <h4>Create a Structure</h4>
+            <p>
+                You can create a structure by using the struct keyword and declare each of its members inside curly braces:
+            </p>
+            <p>
+                struct MyStructure {   // Structure declaration <br>
+                    int myNum;           // Member (int variable) <br>
+                    char myLetter;       // Member (char variable) <br>
+                  }; // End the structure with a semicolon
+            </p>
+            <p>
+                To access the structure, you must create a variable of it.
+
+                Use the struct keyword inside the main() method, followed by the name of the structure and then the name of the structure variable:
+            </p>
+            <p>
+                Create a struct variable with the name "s1": <br>
+
+                struct myStructure { <br>
+                int myNum; <br>
+                char myLetter; <br>
+                }; <br>
+
+                int main() { <br>
+                struct myStructure s1; <br>
+                return 0; <br>
+                }
+            </p>
+            <h4>Access Structure Members</h4>
+            <p>
+                To access members of a structure, use the dot syntax (.): <br>
+
+                Example <br>
+                // Create a structure called myStructure <br>
+                struct myStructure { <br>
+                int myNum; <br>
+                char myLetter; <br>
+                }; <br>
+
+                int main() { <br>
+                // Create a structure variable of myStructure called s1 <br>
+                struct myStructure s1; <br>
+
+                // Assign values to members of s1 <br>
+                s1.myNum = 13; <br>
+                s1.myLetter = 'B'; <br>
+
+                // Print values <br>
+                printf("My number: %d\n", s1.myNum); <br>
+                printf("My letter: %c\n", s1.myLetter); <br>
+
+                return 0; <br>
+                }
+            </p>
+            <h4>C Enums</h4>
+            <p>
+                An enum is a special type that represents a group of constants (unchangeable values).
+
+                To create an enum, use the enum keyword, followed by the name of the enum, and separate the enum items with a comma:
+            </p>
+            <p>
+                enum Level { <br>
+                    LOW, <br>
+                    MEDIUM, <br>
+                    HIGH <br>
+                  };
+            </p>
+            <p>
+                To access the enum, you must create a variable of it.
+
+                Inside the main() method, specify the enum keyword, followed by the name of the enum (Level) and then the name of the enum variable (myVar in this example):
+            </p>
+            <p>
+                enum Level myVar;
+            </p>
+            <p>
+                Now that you have created an enum variable (myVar), you can assign a value to it.
+
+                The assigned value must be one of the items inside the enum (LOW, MEDIUM or HIGH):
+
+                enum Level myVar = MEDIUM;
+            </p>
+            <p>
+                By default, the first item (LOW) has the value 0, the second (MEDIUM) has the value 1, etc.
+
+                If you now try to print myVar, it will output 1, which represents MEDIUM:
+            </p>
+            <p>
+                int main() { <br>
+                    // Create an enum variable and assign a value to it <br>
+                    enum Level myVar = MEDIUM; <br>
+                  
+                    // Print the enum variable <br>
+                    printf("%d", myVar); <br>
+                  
+                    return 0; <br>
+                  }
+            </p>
+            
+            
+
+
+          
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    </section>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/bce8067a-b5f6-4be5-9f58-fc8f0344eaa0/webchat/config.js" defer></script>
+</body>
+</html>

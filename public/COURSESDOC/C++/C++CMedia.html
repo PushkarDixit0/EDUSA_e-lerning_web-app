@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Media</title>
+    <link rel="stylesheet" href="/COURSESDOC/COURSESINFILE.css">
+    <link rel="stylesheet" href="/COURSESDOC/COURSEENDSIDE.css">
+</head>
+<body>
+    <nav id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+
+                    <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <section style="padding-top: 3rem;"></section>
+    <h1>C++ Media</h1>
+    <p>
+        C++ has been a staple in media processing and manipulation for decades, thanks to its efficiency and versatility. From video editing software to audio processing applications, C++ is frequently employed due to its ability to directly interact with hardware and low-level systems. Media frameworks like FFmpeg and OpenCV are written in C++ and are integral to tasks such as video encoding, decoding, and image processing. These libraries leverage C++'s performance to handle large datasets efficiently, making them essential tools for multimedia developers and researchers.
+    </p>
+    <p>
+        In the gaming industry, C++ remains the language of choice for developing high-performance game engines and graphics libraries. Popular game engines like Unreal Engine and Unity utilize C++ extensively for their core systems, physics engines, and rendering pipelines. The language's close-to-the-metal control allows game developers to optimize performance-critical sections of their code, ensuring smooth gameplay experiences across various platforms. Additionally, C++'s object-oriented features enable developers to create complex game systems with ease, facilitating the creation of immersive virtual worlds and interactive experiences.
+    </p>
+    <p>
+        Beyond traditional media formats, C++ also plays a crucial role in emerging technologies such as augmented reality (AR) and virtual reality (VR). AR/VR applications often require real-time processing of sensor data, rendering of immersive environments, and interaction with peripherals like motion controllers. C++'s performance and ability to interface with hardware make it an ideal choice for developing the underlying systems of AR/VR platforms. Companies and researchers working in these fields leverage C++ to build robust, high-performance applications that push the boundaries of immersive computing, enabling new forms of entertainment, training, and communication.
+    </p>
+    <h2>1.Image Processing:</h2>
+    <p>
+        C++ libraries like OpenCV are widely used for image processing tasks.<br>
+        Example: Using OpenCV to read an image and perform basic operations like resizing and grayscale conversion.
+    </p>
+    <p>
+        #include <opencv2/opencv.hpp><br>
+
+        int main() {<br>
+            // Read an image<br>
+            cv::Mat image = cv::imread("image.jpg");<br>
+            
+            // Resize the image<br>
+            cv::Mat resizedImage;<br>
+            cv::resize(image, resizedImage, cv::Size(300, 200));<br>
+
+            // Convert the image to grayscale<br>
+            cv::Mat grayImage;<br>
+            cv::cvtColor(resizedImage, grayImage, cv::COLOR_BGR2GRAY);<br>
+
+            // Display the original and processed images<br>
+            cv::imshow("Original Image", image);<br>
+            cv::imshow("Grayscale Image", grayImage);<br>
+            cv::waitKey(0);<br>
+            return 0;<br>
+        }
+    </p>
+    <h2>2.Audio Processing:</h2>
+    <p>
+        Libraries like PortAudio or Oboe can be used for audio processing.<br>
+        Example: Using PortAudio to record audio from the microphone and save it to a file.
+    </p>
+    <p>
+        #include <iostream><br>
+            #include "portaudio.h"<br>
+            
+            int main() {<br>
+                PaStream *stream;<br>
+                Pa_Initialize();<br>
+            
+                // Define parameters for recording<br>
+                Pa_OpenDefaultStream(&stream, 1, 0, paFloat32, 44100, paFramesPerBufferUnspecified, NULL, NULL);<br>
+            
+                // Start recording<br>
+                Pa_StartStream(stream);<br>
+                std::cout << "Recording started. Press Enter to stop." << std::endl;<br>
+                std::cin.get();<br>
+            
+                // Stop recording<br>
+                Pa_StopStream(stream);<br>
+                Pa_CloseStream(stream);<br>
+                Pa_Terminate();<br>
+                return 0;<br>
+            }      
+    </p>
+    <h2>3.Video Processing:</h2>
+    <p>
+        Libraries like OpenCV can also handle video processing tasks.<br>
+        Example: Using OpenCV to capture video from a camera and display it in real-time.
+    </p>
+    <p>
+        #include <opencv2/opencv.hpp><br>
+
+        int main() {<br>
+            cv::VideoCapture cap(0); // open the default camera<br>
+            if (!cap.isOpened()) {<br>
+                std::cerr << "Error: Could not open camera" << std::endl;<br>
+                return -1;<br>
+            }<br>
+
+            cv::Mat frame;<br>
+            while (true) {<br>
+                cap >> frame; // read a new frame from camera<br>
+                cv::imshow("Live Video", frame);<br>
+                if (cv::waitKey(30) >= 0)<br>
+                    break;<br>
+            }<br>
+            return 0;<br>
+        }
+    </p>
+    <h2>4.Text Processing (for subtitles, captions, etc.):</h2>
+    <p>
+        Standard C++ string manipulation functions can be used for text processing.<br>
+        Example: Parsing and manipulating a subtitle file.
+    </p>
+    <p>
+        #include <iostream><br>
+            #include <fstream><br>
+            #include <string><br>
+            
+            int main() {<br>
+                std::ifstream file("subtitle.srt");<br>
+                std::string line;<br>
+                while (std::getline(file, line)) {<br>
+                    // Process each line of the subtitle file<br>
+                    // Example: Print each line<br>
+                    std::cout << line << std::endl;<br>
+                }<br>
+                file.close();<br>
+                return 0;<br>
+            }    
+    </p>
+</body>
+</html>
