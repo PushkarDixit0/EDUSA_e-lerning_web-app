@@ -2,17 +2,14 @@
 const express = require("express")
 const app = express()
 const path = require("path")
-const hbs = require("hbs")
 require("dotenv").config()
 
 const collection = require("./mongodb")
 
-const { template } = require("handlebars")
-const { userInfo } = require("os")
-const { Session } = require("inspector")
 const templatePath = path.join(__dirname, '../templetes')
+const publicPath = path.join(__dirname, '../public')
 
-app.use(express.static('public'));
+app.use(express.static(publicPath));
 
 
 app.use(express.json())
@@ -33,36 +30,34 @@ app.get("/signup", (req, res) => {
 
 
 app.post("/signup", async (req, res) => {
-
-    const data = {
-        fname: req.body.fname,
-        lname: req.body.lname,
-        email: req.body.email,
-        dob: req.body.dob,
-        gender: req.body.gender,
-        profession:req.body.profession,
-
-        password: req.body.password,
-        profileimg:req.body.profileimg
-    }
-    const exestingUser = await collection.findOne({ email: req.body.email })
-    if (exestingUser) {
-        res.send("user alredy exites")
-    }
     try {
-
-        if (req.body.password === req.body.passwordCheck) {
-            await collection.insertMany([data])
-            res.redirect("/profile?email=" + req.body.email + "&gender=" + req.body.gender + "&fname=" + req.body.fname+ "&lname=" + req.body.lname + "&profession=" + req.body.profession + "&profileimg=" + req.body.profileimg);
-        
+        if (req.body.password !== req.body.passwordCheck) {
+            return res.send("Check Password")
         }
 
-        else {
-            res.send("Check Password")
+        const data = {
+            fname: req.body.fname,
+            lname: req.body.lname,
+            email: req.body.email,
+            dob: req.body.dob,
+            gender: req.body.gender,
+            profession: req.body.profession,
+
+            password: req.body.password,
+            profileimg: req.body.profileimg || 1
         }
+
+        const exestingUser = await collection.findOne({ email: req.body.email })
+        if (exestingUser) {
+            return res.send("user alredy exites")
+        }
+
+        await collection.create(data)
+        res.redirect("/profile?email=" + req.body.email + "&gender=" + req.body.gender + "&fname=" + req.body.fname + "&lname=" + req.body.lname + "&profession=" + req.body.profession + "&profileimg=" + req.body.profileimg);
     }
-    catch {
-        res.send("Enter Detail error")
+    catch (err) {
+        console.error("Signup error:", err.message)
+        res.status(400).send("Signup error: " + err.message)
     }
 
 })
@@ -111,8 +106,10 @@ app.get("/profile", async (req, res) => {
 
 const PORT = process.env.PORT || 5000
 
-app.listen(PORT, () => {
-    console.log(`port connect ${PORT}`);
-})
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`port connect ${PORT}`);
+    })
+}
 
-
+module.exports = app

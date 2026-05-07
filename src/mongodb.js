@@ -1,13 +1,20 @@
 const mongoose = require("mongoose")
 require("dotenv").config()
 
-mongoose.connect(process.env.MONGO_URL)
-    .then(() => {
-        console.log("MongoDB connected");
-    })
-    .catch((err) => {
-        console.log(err);
-    })
+const mongoUrl = process.env.MONGO_URL
+
+if (!mongoUrl) {
+    console.warn("MONGO_URL is missing. Add it in your local .env file and in your deployment environment variables.")
+}
+else {
+    mongoose.connect(mongoUrl)
+        .then(() => {
+            console.log("MongoDB connected");
+        })
+        .catch((err) => {
+            console.error("MongoDB connection error:", err.message);
+        })
+}
 
 
 const LoginSchema = new mongoose.Schema({
@@ -28,7 +35,7 @@ const LoginSchema = new mongoose.Schema({
     },
     gender: {
         type: String,
-        enum: ['Male', 'Female', 'Other']
+        enum: ['male', 'female', 'other', 'Male', 'Female', 'Other']
     },
     profession: {
         type: String
@@ -48,6 +55,4 @@ const LoginSchema = new mongoose.Schema({
 const collection = new mongoose.model("Userinfos", LoginSchema)
 
 module.exports = collection
-
-
 
