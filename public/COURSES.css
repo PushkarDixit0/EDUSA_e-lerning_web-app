@@ -1,0 +1,72 @@
+.navbarcourse ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    
+  
+  }
+  
+  .navbarcourse li {
+   
+    display:contents;
+   
+  }
+  
+  .navbarcourse li a {
+     
+    float:left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 2rem;
+    
+  }
+  
+
+/* card sec css */
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 10rem;
+  
+}
+
+.card {
+  background-color:  #dc143c;
+}
+
+.cards .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: auto;
+  width: auto;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 400ms;
+
+}
+
+.cards .card p.tip {
+  font-size: 1em;
+  font-weight: 700;
+  color: white;
+}
+
+.cards .card p.second-text {
+  font-size: .7em;
+  color: white;
+}
+
+.cards .card:hover {
+  transform: scale(1.1, 1.1);
+}

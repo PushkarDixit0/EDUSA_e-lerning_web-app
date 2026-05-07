@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R</title>
+    <link rel="stylesheet" href="/COURSESDOC/COURSESINFILE.css">
+    <link rel="stylesheet" href="/COURSESDOC/COURSEENDSIDE.css">
+</head>
+
+<body>
+    <nav id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+
+                    <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding-top: 3rem;">
+        <h1>R Introduction</h1>
+        <h2>What is R?</h2>
+        <p>
+            R is a popular programming language used for statistical computing and graphical presentation.
+
+            Its most common use is to analyze and visualize data.
+        </p>
+        <h2>Why Use R?</h2>
+        <p>
+            It is a great resource for data analysis, data visualization, data science and machine learning
+            It provides many statistical techniques (such as statistical tests, classification, clustering and data reduction)
+            It is easy to draw graphs in R, like pie charts, histograms, box plot, scatter plot, etc++
+            It works on different platforms (Windows, Mac, Linux)
+            It is open-source and free
+            It has a large community support
+            It has many packages (libraries of functions) that can be used to solve different problems
+
+        </p>
+        <h2>Syntax</h2>
+        <p>
+            "Hello World!"
+        </p>
+        <h2>Data Types</h2>
+        <p>
+            In programming, data type is an important concept.
+
+            Variables can store data of different types, and different types can do different things.
+
+            In R, variables do not need to be declared with any particular type, and can even change type after they have been set:
+        </p>
+        <h2>Basic Data Types</h2>
+        <p>
+            Basic data types in R can be divided into the following types:
+
+            numeric - (10.5, 55, 787)
+            integer - (1L, 55L, 100L, where the letter "L" declares this as an integer)
+            complex - (9 + 3i, where "i" is the imaginary part)
+            character (a.k.a. string) - ("k", "R is exciting", "FALSE", "11.5")
+            logical (a.k.a. boolean) - (TRUE or FALSE)
+            We can use the class() function to check the data type of a variable:
+        </p>
+        <h2>Example</h2>
+        <p>
+            # numeric <br>
+            x <- 10.5 <br>
+            class(x) <br>
+
+            # integer <br>
+            x <- 1000L <br>
+            class(x) <br>
+
+            # complex <br>
+            x <- 9i + 3 <br>
+            class(x) <br>
+
+            # character/string <br>
+            x <- "R is exciting" <br>
+            class(x) <br>
+
+            # logical <br>
+            x <- TRUE <br>
+            class(x) <br>
+
+        </p>
+        <h2>R Arithmetic Operators</h2>
+        <p>
+            Arithmetic operators are used with numeric values to perform common mathematical operations:
+        </p>
+        <table><tr>
+            <th style="width:25%">Operator</th>
+            <th style="width:40%">Name</th>
+            <th style="width:25%">Example</th>
+            <th style="width:10%">Try it</th>
+            </tr>
+            <tr>
+            <td>+</td>
+            <td>Addition</td>
+            <td>x + y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_add">Try it »</a></td>
+            </tr>
+            <tr>
+            <td>-</td>
+            <td>Subtraction</td>
+            <td>x - y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_sub">Try it »</a></td>
+            </tr>
+            <tr>
+            <td>*</td>
+            <td>Multiplication</td>
+            <td>x * y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_mult">Try it »</a></td>
+            </tr>
+            <tr>
+            <td>/</td>
+            <td>Division</td>
+            <td>x / y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_div">Try it »</a></td>
+            </tr>
+              <tr>
+            <td>^</td>
+            <td>Exponent</td>
+            <td>x ^ y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_exp">Try it »</a></td>
+            </tr>
+            <tr>
+            <td>%%</td>
+            <td>Modulus (Remainder from division)</td>
+            <td>x %% y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_mod">Try it »</a></td>
+            </tr>
+            <tr>
+            <td>%/%</td>
+            <td>Integer Division</td>
+            <td>x%/%y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_int_div">Try it »</a></td>
+            </tr>
+        </table>
+        <h2>R If ... Else</h2>
+        <p>
+            R supports the usual logical conditions from mathematics:
+        </p>
+        <table><tr>
+            <th style="width:25%">Operator</th>
+            <th style="width:35%">Name</th>
+            <th style="width:30%">Example</th>
+            <th style="width:10%;text-align:right">Try it</th>
+            </tr>
+            <tr>
+            <td>==</td>
+            <td>Equal</td>
+            <td>x == y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_compare1">Try it »</a></td>
+            </tr>
+            <tr>
+            <td>!=</td>
+            <td>Not equal</td>
+            <td>x != y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_compare2">Try it »</a></td>
+            </tr>
+            <tr>
+            <td>&gt;</td>
+            <td>Greater than</td>
+            <td>x &gt; y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_compare4">Try it »</a></td>
+            </tr>
+            <tr>
+            <td>&lt;</td>
+            <td>Less than</td>
+            <td>x &lt; y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_compare5">Try it »</a></td>
+            </tr>
+              <tr>
+            <td>&gt;=</td>
+            <td>Greater than or equal to</td>
+            <td>x &gt;= y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_compare6">Try it »</a></td>
+              </tr>
+            <tr>
+            <td>&lt;=</td>
+            <td>Less than or equal to</td>
+            <td>x &lt;= y</td>
+            <td><a target="_blank" class="w3-btn btnsmall btnsmall" href="tryr.asp?filename=demo_oper_compare7">Try it »</a></td>
+            </tr>
+        </table>
+        <h2>The if Statement</h2>
+        <p>
+            An "if statement" is written with the if keyword, and it is used to specify a block of code to be executed if a condition is TRUE:
+        </p>
+        <h2>Example</h2>
+        <p>
+            a <- 33 <br>
+            b <- 200 <br>
+
+            if (b > a) { <br>
+            print("b is greater than a") <br>
+            }
+        </p>
+        <h2>Else If</h2>
+        <p>
+            The else if keyword is R's way of saying "if the previous conditions were not true, then try this condition":
+        </p>
+        <h2>Example</h2>
+        <p>
+            a <- 33 <br>
+            b <- 33 <br>
+
+            if (b > a) { <br>
+            print("b is greater than a") <br>
+            } else if (a == b) { <br>
+            print ("a and b are equal") <br>
+            }
+
+        </p>
+        <h2>Vectors</h2>
+        <p>
+            A vector is simply a list of items that are of the same type.
+
+            To combine the list of items to a vector, use the c() function and separate the items by a comma.
+
+            In the example below, we create a vector variable called fruits, that combine strings:
+        </p>
+        <h2>Example</h2>
+        <p>
+            # Vector of characters/strings <br>
+            fruits <- c("banana", "apple", "orange") <br>
+
+            # Print fruits <br>
+            fruits 
+        </p>
+
+    </section>
+</body>
+</html>

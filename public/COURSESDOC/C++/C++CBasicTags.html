@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Tags</title>
+    <link rel="stylesheet" href="/COURSESDOC/COURSESINFILE.css">
+    <link rel="stylesheet" href="/COURSESDOC/COURSEENDSIDE.css">
+</head>
+<body>
+    <nav id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+
+                    <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding-top: 3rem;">
+        <h1>C++ Basic Tags</h1>
+        <h2>Source Code Tags</h2>
+        <p>
+            Syntax:<br>
+            [code]int main() {<br>
+                return 0;<br>
+            }[/code]<br>
+
+            Becomes:<br>
+            1<br>
+            2<br>
+            3<br>
+            int main() {<br>
+                return 0;<br>
+            }
+        </p>
+        <p>
+            Use this whenever you post code, as it provides coloring most people are used to, as well as preserving indentation (a Good Thing).
+
+            You can also make it start at a specific line number (10, in this example) by doing this:<br>
+            [code firstline=10]//start in the middle of some function<br>
+            for(unsigned int i = 0; i < 5; ++i) {<br>
+            do_something(i);<br>
+            }[/code]<br>
+
+            This becomes:<br>
+            10<br>
+            11<br>
+            12<br>
+            13<br>
+            //start in the middle of some function<br>
+            for(unsigned int i = 0; i < 5; ++i) {<br>
+                do_something(i);<br>
+            }<br>
+
+
+            One warning however, long code lines will simply stretch the box, so try to avoid using overly long lines of code.
+        </p>
+        <h2> Output Tags</h2>
+        <p>
+            Syntax:<br>
+            [output]Code Output Goes Here<br>
+            1234567890[/output]<br>
+
+            Becomes:<br>
+            Code Output Goes Here<br>
+            1234567890<br>
+            Use this if you have output that you want to display from your code, e.g.: expected results, actual results.
+        </p>
+        <h2>Combining the Above</h2>
+        <p>
+            If you have a short piece of code and output you wish to display, you can use the following format:<br>
+
+            [code]int main() {<br>
+                std::cout<<"Hello World!"<<std::endl;<br>
+                return 0;<br>
+            }<br>
+            ---<br>
+            Hello World!<br>
+            [/code]<br>
+
+            Becomes:<br>
+            1<br>
+            2<br>
+            3<br>
+            4<br>
+            int main() {<br>
+                std::cout<<"Hello World!"<<std::endl;<br>
+                return 0;<br>
+            }
+        </p>
+        <h2>Quotation Tags</h2>
+        <p>
+            Syntax:<br>
+                [quote]Quote goes here.[/quote]<br>
+
+                or to more easily quote a specific person:<br>
+                [quote=Somebody]I didn't say that!![/quote]<br>
+
+                Becomes:<br>
+                Quote goes here.<br>
+
+                or<br>
+                Somebody wrote:<br>
+                I didn't say that!!<br>
+
+                Use this to quote other people or stuff from another site. This makes it more obvious as to what exactly was said.
+        </p>
+        <h2>Teletype Tags</h2>
+        <p>
+            Syntax:<br>
+            [tt]abcdefghij<br>
+            1234567890[/tt]<br>
+
+            Becomes:<br>
+            abcdefghij<br>
+            1234567890<br>
+            This tag is quite similar to the Code Output tag, shown above, except it does not have a box surrounding it, and will delete excess whitespace at the beginning of a line.
+        </p>
+        <h2>Miscellaneous Tags</h2>
+        <p>
+            This section contains the tags that simply alter the appearance of the text.<br>
+
+            Bold:<br>
+            [b]Text[/b]    =>    Text<br>
+            Italic:<br>
+            [i]Text[/i]    =>    Text<br>
+            Underline:<br>
+            [u]Text[/u]    =>    Text<br>
+            Small:<br>
+            [small]Text[/small]    =>    Text<br>
+            Subscript:<br>
+            [sub]Text[/sub]    =>    Text<br>
+            Superscript:<br>
+            [sup]Text[/sup]    =>    Text
+        </p>
+    
+</body>
+</html>

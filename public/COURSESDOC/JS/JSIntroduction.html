@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="/COURSESDOC/COURSESINFILE.css">
+    <link rel="stylesheet" href="/COURSESDOC/COURSEENDSIDE.css">
+</head>
+
+<body>
+    <nav id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+
+                    <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding-top: 3rem;">
+<h1>JavaScript Introduction</h1>
+
+<h4>JavaScript Can Change HTML Content</h4>
+<p>One of many JavaScript HTML methods is getElementById().
+
+    The example below "finds" an HTML element (with id="demo"), and changes the element content (innerHTML) to "Hello JavaScript":</p>
+
+
+<div class="code">
+
+<p>
+
+    &lt;!DOCTYPE html&gt; <br>
+&lt;html&gt;<br>
+&lt;body&gt;<br>
+
+&lt;h2&gt;What Can JavaScript Do?&lt;/h2&gt;<br>
+
+&lt;p id="demo"&gt;JavaScript can change HTML content.&lt;/p&gt;<br>
+
+&lt;button type="button" onclick='document.getElementById("demo 1 double quotes").innerHTML = "Hello JavaScript!"'&gt;Click Me!&lt;/button&gt;<br>
+&lt;button type="button" onclick="document.getElementById('demo 2 single quotes').innerHTML = 'Hello JavaScript!'"&gt;Click Me!&lt;/button&gt;
+&lt;/body&gt;<br>
+&lt;/html&gt;<br>
+
+</p>
+
+</div>
+<p class="tip">JavaScript accepts both double and single quotes:</p>
+
+<h4>JavaScript Can Change HTML Attribute Values</h4>
+<p>In this example JavaScript changes the value of the src (source) attribute of an &lt;img&gt; tag:</p>
+
+<div class="code">
+
+<p>
+    <!DOCTYPE html>
+&lt;html&gt;<br>
+&lt;body&gt;<br>
+
+&lt;h2&gt;What Can JavaScript Do?&lt;/h2&gt;<br>
+
+&lt;p&gt;JavaScript can change HTML attribute values.&lt;/p&gt;<br>
+
+&lt;p&gt;In this case JavaScript changes the value of the src (source) attribute of an image.&lt;/p&gt;<br>
+
+&lt;button onclick="document.getElementById('myImage').src='pic_bulbon.gif'"&gt;Turn on the light&lt;/button&gt;<br>
+
+&lt;img id="myImage" src="pic_bulboff.gif" style="width:100px"&gt;<br>
+
+&lt;button onclick="document.getElementById('myImage').src='pic_bulboff.gif'"&gt;Turn off the light&lt;/button&gt;<br>
+
+&lt;/body&gt;<br>
+&lt;/html&gt;<br>
+
+</p>
+</div>
+<img src="/img/javascript/lightbulb.png" alt="">
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/bce8067a-b5f6-4be5-9f58-fc8f0344eaa0/webchat/config.js" defer></script>
+
+</body>
+</html>

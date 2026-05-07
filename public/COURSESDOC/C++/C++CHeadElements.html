@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Head Elements</title>
+    <link rel="stylesheet" href="/COURSESDOC/COURSESINFILE.css">
+    <link rel="stylesheet" href="/COURSESDOC/COURSEENDSIDE.css">
+</head>
+<body>
+    <nav id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+
+                    <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <section style="padding-top: 3rem;"></section>
+    <h1>C++ Head Elements</h1>
+    <p>
+        In C++, "head elements" could refer to the first element in a data structure like an array, vector, list, or any other container. Here's a list of some common containers in C++ and how to access their head elements:
+    <h2>1.Array:</h2>
+    <p>
+        Arrays in C++ are accessed by index, so the first element (head element) would be at index 0.
+    </p>
+    <p>
+        int arr[] = {10, 20, 30, 40, 50};<br>
+        int head_element = arr[0];
+    </p>
+    <h2>2.Vector:</h2>
+    <p>
+        Vectors are part of the Standard Template Library (STL) in C++. The front() function is used to access the first element.
+    </p>
+    <p>
+        #include <vector><br>
+            #include <iostream><br>
+            
+            std::vector<int> vec = {10, 20, 30, 40, 50};<br>
+            int head_element = vec.front();    
+    </p>
+    <h2>3.List:</h2>
+    <p>
+        Lists are doubly linked lists in C++. The front() function is also used to access the first element.
+    </p>
+    <p>
+        #include <list><br>
+            #include <iostream><br>
+            std::list<int> lst = {10, 20, 30, 40, 50};<br>
+            int head_element = lst.front();        
+    </p>
+    <h2>4.Deque:</h2>
+    <p>
+        Deques are double-ended queues. The front() function is used to access the first element.
+    </p>
+    <p>
+        #include <deque><br>
+            #include <iostream><br>
+            
+            std::deque<int> deq = {10, 20, 30, 40, 50};<br>
+            int head_element = deq.front();  
+    </p>
+    <h2>5.Queue:</h2>
+    <p>
+        Queues are FIFO (First In, First Out) data structures. The front() function is used to access the first element.
+    </p>
+    <p>
+        #include <queue><br>
+            #include <iostream><br>
+            
+            std::queue<int> q;<br>
+            q.push(10);<br>
+            q.push(20);<br>
+            q.push(30);<br>
+            int head_element = q.front();   
+    </p>
+    <h2>6.Priority Queue:</h2>
+    <p>
+        Priority queues are a type of queue where elements are popped based on priority. The top() function is used to access the highest priority (head) element.
+    </p>
+    <p>
+        #include <queue><br>
+            #include <iostream><br>
+            
+            std::priority_queue<int> pq;<br>
+            pq.push(30);<br>
+            pq.push(10);<br>
+            pq.push(20);<br>
+            int head_element = pq.top();      
+    </p>
+    <h2>7.Stack:</h2>
+    <p>
+        Stacks are Last In, First Out (LIFO) data structures. The top element is typically considered the "head" element.
+    </p>
+    <p>
+        #include <stack><br>
+            #include <iostream><br>
+            
+            std::stack<int> stk;<br>
+            stk.push(10);<br>
+            stk.push(20);<br>
+            stk.push(30);<br>
+            int head_element = stk.top();    
+    </p>
+    <h2>8.Set:</h2>
+    <p>
+        Sets in C++ are typically implemented as balanced binary search trees or hash tables. The first element in the set depends on its ordering, but you can access it through iterators or with the begin() function.
+    </p>
+    <p>
+        #include <set><br>
+            #include <iostream><br>
+            
+            std::set<int> s = {30, 10, 20};<br>
+            int head_element = *s.begin(); // Accessing the first element through iterator    
+    </p>
+    <h2>9.Map:</h2>
+    <p>
+        Maps store key-value pairs, and accessing the first element depends on the ordering of keys. You can access it through iterators or with the begin() function.
+    </p>
+    <p>
+            #include <map><br>
+            #include <iostream><br>
+            
+            std::map<char, int> m = {{'a', 1}, {'b', 2}, {'c', 3}};<br>
+            char head_element = m.begin()->first; // Accessing the key of the first element<br>
+            int head_value = m.begin()->second; // Accessing the value of the first element    
+    </p>
+    <h2>10.Unordered Set:</h2>
+    <p>
+        Unordered sets in C++ are typically implemented as hash tables. The first element may vary, but you can access it through iterators or with the begin() function.
+    </p>
+    <p>
+        #include <unordered_set><br>
+            #include <iostream><br>
+            
+            std::unordered_set<int> us = {30, 10, 20};<br>
+            int head_element = *us.begin(); // Accessing the first element through iterator     
+    </p>
+    <h2>11.Unordered Map:</h2>
+    <p>
+        Unordered maps store key-value pairs in an unordered manner, so the concept of the "first" element might not be meaningful in terms of order, but you can access it through iterators or with the begin() function.
+    </p>
+    <p>
+        #include <unordered_map><br>
+            #include <iostream><br>
+            
+            std::unordered_map<char, int> um = {{'a', 1}, {'b', 2}, {'c', 3}};<br>
+            char head_element = um.begin()->first; // Accessing the key of the first element<br>
+            int head_value = um.begin()->second; // Accessing the value of the first element        
+    </p>
+</body>
+</html>

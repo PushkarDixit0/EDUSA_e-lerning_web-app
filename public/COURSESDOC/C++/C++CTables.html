@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++Tables</title>
+    <link rel="stylesheet" href="/COURSESDOC/COURSESINFILE.css">
+    <link rel="stylesheet" href="/COURSESDOC/COURSEENDSIDE.css">
+</head>
+<body>
+    <nav id="header">
+        <div class="header container">
+            <div class="nav-bar">
+                <div class="brand">
+
+                    <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <section style="padding-top: 3rem;"></section>
+    <h1>C++ Program to Generate Multiplication Table</h1>
+    <p>
+        The multiplication table is used to define a multiplication operation for any number. It is normally used to lay the foundation of elementary arithmetic operations with base ten numbers.
+
+        The multiplication table of any number is written till 10. In each row, the product of the number with 1 to 10 is displayed. An example of the multiplication table of 4 is as follows −<br>
+        4 * 1 = 4<br>
+        4 * 2 = 8<br>
+        4 * 3 = 12<br>
+        4 * 4 = 16<br>
+        4 * 5 = 20<br>
+        4 * 6 = 24<br>
+        4 * 7 = 28<br>
+        4 * 8 = 32<br>
+        4 * 9 = 36<br>
+        4 * 10 = 40
+    </p>
+    <p>
+        A program that generates the multiplication table of the given number is as follows.
+    </p>
+    <h2>Example</h2>
+    <p>
+        #include <iostream><br>
+            using namespace std;<br>
+            int main() {<br>
+               int n = 7, i;<br>
+               cout<<"The multiplication table for "<< n <<" is as follows:"<< endl;<br>
+               for (i = 1; i <= 10; i++)<br>
+               cout << n << " * " << i << " = " << n * i << endl;<br>
+               return 0;<br>
+            }
+    </p>
+    <h2>Output:</h2>
+    <p>
+        The multiplication table for 7 is as follows:<br>
+        7 * 1 = 7<br>
+        7 * 2 = 14<br>
+        7 * 3 = 21<br>
+        7 * 4 = 28<br>
+        7 * 5 = 35<br>
+        7 * 6 = 42<br>
+        7 * 7 = 49<br>
+        7 * 8 = 56<br>
+        7 * 9 = 63<br>
+        7 * 10 = 70
+    </p>
+    <p>
+        In the above program, a for loop is used from 1 to 10. In each iteration of the for loop, the number is multiplied with i and the product is displayed. This is demonstrated by the following code snippet.<br>
+        for (i = 1; i <= 10; i++)<br>
+        cout << n << " * " << i << " = " << n * i <<endl;<br>
+    </p>
+    <h2>Symbol Table in C++</h2>
+    <p>
+        In this article, you will learn about the symbol table in C++.
+    </p>
+    <h2>Compiler Design symbol table</h2>
+    <p>
+        In order to store information on the existence of different entities, such as variable and function names, objects and classes, etc., the compiler builds and maintains a data structure. Symbol tables are one class of data structure.
+    </p>
+    <h2>C++ code for symbol table entry:</h2>
+    <p>
+        Example:<br>
+        Found symbol A in the symbol table.
+        Symbol X not found in the symbol table.
+    </p>
+    <h2>Symbol table operations</h2>
+    <p>
+        There are several symbol table operations in C++. Some main symbol table operations in C++ are as follows:
+    </p>
+    <p>
+        Operate on the Symbol table.<br>
+
+            A symbol table can use the Allocate Operation to allocate a brand-new, empty symbol table.<br>
+
+            Operation Insert on the Symbol table<br>
+
+            A symbol table's Insert Operation can be used to insert a name and return a pointer to the entry.<br>
+
+            Operation Set_attribute on the Symbol table<br>
+            Set_attribute is a symbol table that can be operated on to associate an attribute with a specific entry.
+
+            Operation Get_attribute on the Symbol table
+
+            Get_attribute is a symbol table that can be operated on to obtain an attribute connected to a specific entry.<br>
+
+            Operation of Lookup on the Symbol Table
+    </p>
+    <p>
+        Operation of Lookup on the Symbol Table
+
+        Lookup An operation on a symbol table can be used to look for a name and return a pointer to its entry.
+
+        Free Operation on the Symbol table
+
+        A symbol table's storage can be freed up by performing a Free Operation to remove every entry. On the symbol table, additional actions can be carried out in a similar manner to remove operations.
+
+    </p>
+    <h2>Deployment of the Symbol table</h2>
+    <p>
+        LinkedList<br>
+        Hash Table<br>
+        Tree<br>
+        Implementation of symbol tables in C++ using hashing:<br>
+        // Symbol Table implementation in C++<br> 
+  
+            #include <iostream><br> 
+            using namespace std;<br>  
+            
+            const int MAXIMUM = 200;<br>   
+            
+            class Node {<br>   
+            
+                string identifier, scope, type;<br>   
+                int Line_Number; <br>  
+                Node* next_Node; <br>  
+            
+            public: <br>  
+                Node()<br>   
+                {<br>   
+                    next_Node = NULL;<br>   
+                }  <br> 
+            
+                Node(string key, string value, string type, int Line_Number)  <br> 
+                { <br>  
+                    this->identifier = key;<br>   
+                    this->scope = value<br>   
+                    this->type = type;<br>   
+                    this->Line_Number = Line_Number;<br>   
+                    next_Node = NULL; <br>  
+                } <br>  
+            
+                void print()<br>   
+                {<br>   
+                    cout<< "Identifier's Name:" << identifier<br>   
+                        << "\nType:" << type<br>   
+                        << "\nScope: " << scope <br>  
+                        << "\nLine Number: " <<Line_Number<<endl; <br>  
+                } <br>  
+                friend class SymbolTable;<br>   
+            }; <br>  
+            
+            class SymbolTable { <br>  
+                Node* header[MAXIMUM]; <br>  
+            
+            public: <br>  
+                SymbolTable()<br>   
+                { <br>  
+                    for (int i = 0; i< MAXIMUM; i++)  <br> 
+                        header[i] = NULL;   <br>
+                } <br>  
+            
+                int hashf(string id); // hash function  <br> 
+                bool JavaTpoint_insertion(string id, string scope, <br>  
+                            string Type, int Line_Number); <br>  
+            
+                string JavaTpoint_search(string id); <br>  
+            
+                bool deleteRecord(string id); <br>  
+            
+                bool modify(string id, string scope,<br>   
+                            string Type, int Line_Number); <br>  
+            }; <br>  
+            
+            // Identifyer modification function <br>  
+            
+            bool SymbolTable::modify(string id, string s, <br>  
+                                    string t, int l) <br>  
+            {<br>   
+                int index = hashf(id); <br>  
+                Node* start = header[index]; <br>  
+            
+                if (start == NULL)<br>   
+                    return "-1";<br>   
+            
+                while (start != NULL) {  <br> 
+                    if (start->identifier == id) {<br>   
+                        start->scope = s; <br>  
+                        start->type = t; <br>  
+                        start->Line_Number = l;  <br> 
+                        return true; <br>  
+                    }<br>   
+                    start = start->next_Node;<br>   
+                } <br>  
+            
+                return false; // id not found  <br> 
+            }<br>   
+            
+            // Delete an identifier function  <br>
+            
+            bool SymbolTable::deleteRecord(string id)   <br>
+            {   
+                int index = hashf(id); <br>  
+                Node* JavaTpoint_Temporary_Variable = header[index];<br>    
+                Node* par = header[index]; <br>   
+            
+                // There is no identifier at that index.<br>    
+            
+                if (JavaTpoint_Temporary_Variable == NULL) { <br>   
+                    return false;<br>    
+                }  <br>  
+                // There is only one identifier.<br>    
+            
+                if (JavaTpoint_Temporary_Variable->identifier == id &&JavaTpoint_Temporary_Variable->next_Node == NULL) {  <br>  
+                    JavaTpoint_Temporary_Variable->next_Node = NULL; <br>   
+                    delete JavaTpoint_Temporary_Variable; <br>   
+                    return true; <br>   
+                } <br>   
+            
+                while (JavaTpoint_Temporary_Variable->identifier != id &&JavaTpoint_Temporary_Variable->next_Node != NULL) { <br>   
+                    par = JavaTpoint_Temporary_Variable; <br>   
+                    JavaTpoint_Temporary_Variable = JavaTpoint_Temporary_Variable->next_Node; <br>   
+                } <br>   
+                if (JavaTpoint_Temporary_Variable->identifier == id &&JavaTpoint_Temporary_Variable->next_Node != NULL) { <br>   
+                    par->next_Node = JavaTpoint_Temporary_Variable->next_Node; <br>   
+                    JavaTpoint_Temporary_Variable->next_Node = NULL;<br>    
+                    delete JavaTpoint_Temporary_Variable; <br>   
+                    return true; <br>   
+                } <br>   
+            
+                // remove the conclusion  <br> 
+                else { <br>   
+                    par->next_Node = NULL;<br>    
+                    JavaTpoint_Temporary_Variable->next_Node = NULL; <br>   
+                    delete JavaTpoint_Temporary_Variable; <br>   
+                    return true;<br>    
+                } <br>   
+                return false; <br>   
+            } <br>   
+            
+            // JavaTpoint_search identifier function  <br>  
+            
+            string SymbolTable::JavaTpoint_search(string id) <br>   
+            { <br>   
+                int index = hashf(id); <br>   
+                Node* start = header[index]; <br>   
+            
+                if (start == NULL) <br>   
+                    return "-1"; <br>   
+            
+                while (start != NULL) {  <br>  
+            
+                    if (start->identifier == id) {  <br>  
+                        start->print();<br>    
+                        return start->scope; <br>   
+                    }   <br> 
+            
+                    start = start->next_Node; <br>   
+                } <br>   
+            
+                return "-1"; // not found <br>   
+            } <br>   
+            
+            // JavaTpoint_insertion function for an identifier<br>     
+            bool SymbolTable::JavaTpoint_insertion(string id, string scope,<br>    
+                                    string Type, int Line_Number)  <br>  
+            {   <br> 
+                int index = hashf(id); <br>   
+                Node* p = new Node(id, scope, Type, Line_Number); <br>   
+            
+                if (header[index] == NULL) { <br>   
+                    header[index] = p; <br>   
+                    cout<< "\n" <br>  
+                        << id << " insertion"; <br>   
+            
+                    return true;<br>    
+                }<br>    
+            
+                else { <br>   
+                    Node* start = header[index]; <br>   
+                    while (start->next_Node != NULL) <br>   
+                        start = start->next_Node; <br>   
+            
+                    start->next_Node = p;<br>    
+                    cout<< "\n"<br>   
+                        << id << " insertion"; <br>   
+            
+                    return true; <br>    
+                } <br>   
+                return false; <br>   
+            }  <br>  
+            int SymbolTable::hashf(string id)  <br>  
+            { <br>   
+                int asciiSum = 0;<br>    
+            
+                for (int i = 0; i<id.length(); i++) {  <br>  
+                    asciiSum = asciiSum + id[i];<br>    
+                } <br>   
+                return (asciiSum % 100); <br>   
+            } <br>   
+            int main()<br>    
+            { <br>   
+                SymbolTablest; <br>   
+                string check; <br>   
+                cout<< "**** SYMBOL_TABLE ****\n"; <br>   
+            
+                if (st.JavaTpoint_insertion("if", "local", "keyword", 4)) <br>   
+                    cout<< " -successfully"; <br>   
+                else <br>  
+                    cout<< "\nFailed to JavaTpoint_insertion.\n"; <br>   
+            
+                if (st.JavaTpoint_insertion("number", "global", "variable", 2)) <br>   
+                    cout<< " -successfully\n\n"; <br>   
+                else <br>  
+                    cout<< "\nFailed to JavaTpoint_insertion\n"; <br>   
+            
+                check = st.JavaTpoint_search("if");<br>    
+                if (check != "-1") <br>   
+                    cout<< "Identifier Is present\n";<br>    
+                else<br>   
+                    cout<< "\nIdentifier Not Present\n"; <br>   
+            
+                if (st.deleteRecord("if")) <br>   
+                    cout<< "if Identifier is deleted\n";  <br>  
+                else <br>  
+                    cout<< "\nFailed to delete\n";<br>    
+            
+                if (st.modify("number", "global", "variable", 3)) <br>   
+                    cout<< "\nNumber Identifier updated\n"; <br>   
+            
+                check = st.JavaTpoint_search("number");<br>    
+                if (check != "-1")<br>    
+                    cout<< "Identifier Is present\n"; <br>   
+                else <br>  
+                    cout<< "\nIdentifier Not Present";<br>    
+                return 0; <br>   
+            }  
+    </p>
+    <h2>Output:</h2>
+    <p>
+        **** SYMBOL_TABLE ****<br>
+
+        if insertion -successfully<br>
+        number insertion -successfully<br>
+
+        Identifier's Name:if<br>
+        Type:keyword<br>
+        Scope: local<br>
+        Line Number: 4<br>
+        Identifier Is present<br>
+        if Identifier is deleted<br>
+
+        Number Identifier updated<br>
+        Identifier's Name:number<br>
+        Type:variable<br>
+        Scope: global<br>
+        Line Number: 3<br>
+        Identifier Is present
+    </p>
+</body>
+</html>

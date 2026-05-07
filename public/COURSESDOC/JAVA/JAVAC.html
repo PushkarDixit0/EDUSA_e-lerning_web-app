@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/COURSES.css">
+    <link rel="stylesheet" href="/COURSESDOC/COURSESINFILE.css">
+   
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+
+
+        }
+
+        .grid-item {
+
+
+            padding: 2rem;
+            font-size: 50px;
+            text-align: center;
+        }
+
+
+        .boysblock {
+
+            height: 80;
+        }
+
+        .parent {
+            width: 40rem;
+            height: 40rem;
+            
+        }
+
+        .card {
+            padding-top: 50px;
+            /* border-radius: 10px; */
+            border: 3px solid rgb(255, 255, 255);
+            transform-style: preserve-3d;
+            background: linear-gradient(135deg, #0000 18.75%, #f3f3f3 0 31.25%, #0000 0),
+                repeating-linear-gradient(45deg, #f3f3f3 -6.25% 6.25%, #ffffff 0 18.75%);
+            background-size: 60px 60px;
+            background-position: 0 0, 0 0;
+            background-color: #f0f0f0;
+            width: 100%;
+            box-shadow: rgba(142, 142, 142, 0.3) 0px 30px 30px -10px;
+            transition: all 0.5s ease-in-out;
+            width: 30rem;
+            height: 20rem;
+        }
+
+        .card:hover {
+            background-position: -100px 100px, -100px 100px;
+            transform: rotate3d(0.5, 1, 0, 30deg);
+        }
+
+        .content-box {
+            background: #DC143C;
+            /* border-radius: 10px 100px 10px 10px; */
+            transition: all 0.5s ease-in-out;
+            padding: 60px 25px 25px 25px;
+            transform-style: preserve-3d;
+        }
+
+        .content-box .card-title {
+            display: inline-block;
+            color: white;
+            font-size: 25px;
+            font-weight: 900;
+            transition: all 0.5s ease-in-out;
+            transform: translate3d(0px, 0px, 50px);
+        }
+
+        .content-box .card-title:hover {
+            transform: translate3d(0px, 0px, 60px);
+        }
+
+        .content-box .card-content {
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #f2f2f2;
+            transition: all 0.5s ease-in-out;
+            transform: translate3d(0px, 0px, 30px);
+        }
+
+        .content-box .card-content:hover {
+            transform: translate3d(0px, 0px, 60px);
+        }
+
+        .content-box .see-more {
+            cursor: pointer;
+            margin-top: 1rem;
+            display: inline-block;
+            font-weight: 900;
+            font-size: 9px;
+            text-transform: uppercase;
+            color: #DC143C;
+            /* border-radius: 5px; */
+            background: white;
+            padding: 0.5rem 0.7rem;
+            transition: all 0.5s ease-in-out;
+            transform: translate3d(0px, 0px, 20px);
+        }
+
+        .content-box .see-more:hover {
+            transform: translate3d(0px, 0px, 60px);
+        }
+
+        .date-box {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            height: 60px;
+            width: 60px;
+            background: white;
+            border: 1px solid #DC143C;
+            /* border-radius: 10px; */
+            padding: 10px;
+            transform: translate3d(0px, 0px, 80px);
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 17px 10px -10px;
+        }
+
+        .date-box span {
+            display: block;
+            text-align: center;
+        }
+
+        .date-box .month {
+            color: #DC143C;
+            font-size: 9px;
+            font-weight: 700;
+        }
+
+        .date-box .date {
+            font-size: 20px;
+            font-weight: 900;
+            color: #DC143C;
+        }
+    </style>
+</head>
+
+<body>
+     <nav id="header">
+        <div class="header container">
+          <div class="nav-bar">
+            <div class="brand">
+              
+                <h1><span>E</span>d<span>u</span>s<span>a</span></h1>
+              
+            </div>
+          
+          </div>
+        </div>
+      </nav>
+    
+    <section class="navbarcourse" >
+   
+   
+   
+       <ul>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/C/CC.html">C</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/C++/C++C.html">C++</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/HTML/HTMLC.html">HTML</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/CSS/CSSC.html">CSS</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/JS/JSC.html">JAVASCRIPT</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/PY/PYC.html">PYTHON</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/JAVA/JAVAC.html">JAVA</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/GIT/GITC.html">GIT</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/R/RC.html">R</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/SQL/SQLC.html">SQL</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/DBMS/DBMSC.html">DBMS</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/DS/DSC.html">DATA SCIENCE</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/DSA/DSAC.html">DSA</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/AWS/AWSC.html">AWS</a></li>
+            <li><a style="font-size: 1.4rem !important;" href="/COURSESDOC/AI/AIC.html">AI</a></li>
+          </ul>
+    
+    </section>
+
+    <section class="boysblock">
+        <div class="parent">
+
+
+            <div class="grid-container">
+                <div class="grid-item">
+                    <a href="/COURSESDOC/JAVA/JAVACIntroduction.html"> <div class="card">
+                        <div class="content-box">
+                            <span class="card-title">JAVA INTODUCTION</span>
+                            <p class="card-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <span class="see-more">See More</span>
+                        </div>
+                        <div class="date-box">
+                            <span class="month"><img
+                                    src="/img/STARRATE.png" width="15px" height="15px" alt="">5</span>
+                            <span class="date">1</span>
+                        </div>
+                    </div></a>
+                </div>
+                <div class="grid-item">
+                    <div class="card">
+                        <div class="content-box">
+                            <span class="card-title">JAVA BASIC TAGS</span>
+                            <p class="card-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <span class="see-more">See More</span>
+                        </div>
+                        <div class="date-box">
+                            <span class="month"><img src="/img/STARRATE.png" width="15px" height="15px" alt="">4.8</span>
+                            <span class="date">2</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card">
+                        <div class="content-box">
+                            <span class="card-title">INLINE & BLOCK ELEMENTS</span>
+                            <p class="card-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <span class="see-more">See More</span>
+                        </div>
+                        <div class="date-box">
+                            <span class="month"><img src="/img/STARRATE.png" width="15px" height="15px" alt="">4.9</span>
+                            <span class="date">3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card">
+                        <div class="content-box">
+                            <span class="card-title">JAVA LISTS</span>
+                            <p class="card-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <span class="see-more">See More</span>
+                        </div>
+                        <div class="date-box">
+                            <span class="month"><img src="/img/STARRATE.png" width="15px" height="15px" alt="">5</span>
+                            <span class="date">4</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card">
+                        <div class="content-box">
+                            <span class="card-title">JAVA TABLES</span>
+                            <p class="card-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <span class="see-more">See More</span>
+                        </div>
+                        <div class="date-box">
+                            <span class="month"><img src="/img/STARRATE.png" width="15px" height="15px" alt="">4.3</span>
+                            <span class="date">5</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card">
+                        <div class="content-box">
+                            <span class="card-title">JAVA FORMS</span>
+                            <p class="card-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <span class="see-more">See More</span>
+                        </div>
+                        <div class="date-box">
+                            <span class="month"><img src="/img/STARRATE.png" width="15px" height="15px" alt="">4</span>
+                            <span class="date">6</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card">
+                        <div class="content-box">
+                            <span class="card-title">HEAD ELEMENTS</span>
+                            <p class="card-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <span class="see-more">See More</span>
+                        </div>
+                        <div class="date-box">
+                            <span class="month"><img src="/img/STARRATE.png" width="15px" height="15px" alt="">4.5</span>
+                            <span class="date">7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="card">
+                        <div class="content-box">
+                            <span class="card-title">JAVA MEDIA</span>
+                            <p class="card-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <span class="see-more">See More</span>
+                        </div>
+                        <div class="date-box">
+                            <span class="month"><img src="/img/STARRATE.png" width="15px" height="15px" alt="">3.9</span>
+                            <span class="date">8</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item">
+                    <div class="card">
+                        <div class="content-box">
+                            <span class="card-title">Miscellaneous Tags</span>
+                            <p class="card-content">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <span class="see-more">See More</span>
+                        </div>
+                        <div class="date-box">
+                            <span class="month"><img src="/img/STARRATE.png" width="15px" height="15px" alt="">4.8</span>
+                            <span class="date">9</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+    </section>
+
+
+</body>
+
+</html>
