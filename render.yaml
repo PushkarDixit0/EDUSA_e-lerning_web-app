@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: edusa
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: MONGO_URL
+        sync: false
