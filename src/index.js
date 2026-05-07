@@ -27,6 +27,18 @@ app.get("/signup", (req, res) => {
     res.render("signup")
 })
 
+app.get("/health", (req, res) => {
+    const mongoUrl = process.env.MONGO_URL || ""
+    const host = mongoUrl.includes("@") ? mongoUrl.split("@")[1].split("/")[0] : "missing"
+
+    res.json({
+        status: "ok",
+        hasMongoUrl: Boolean(process.env.MONGO_URL),
+        mongoHost: host,
+        dbReadyState: collection.db.readyState
+    })
+})
+
 
 
 app.post("/signup", async (req, res) => {

@@ -1,10 +1,13 @@
 const mongoose = require("mongoose")
 require("dotenv").config()
 
-const mongoUrl = process.env.MONGO_URL
+mongoose.set("bufferCommands", false)
+
 let connectionPromise
 
 const connectDB = async () => {
+    const mongoUrl = process.env.MONGO_URL
+
     if (!mongoUrl) {
         throw new Error("MONGO_URL is missing. Add it in your local .env file and in your deployment environment variables.")
     }
@@ -65,7 +68,7 @@ const LoginSchema = new mongoose.Schema({
 
     }
 
-}, { timestamps: true })
+}, { timestamps: true, bufferCommands: false })
 
 const collection = new mongoose.model("Userinfos", LoginSchema)
 
