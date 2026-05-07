@@ -4,7 +4,7 @@ const app = express()
 const path = require("path")
 require("dotenv").config()
 
-const collection = require("./mongodb")
+const { collection, connectDB } = require("./mongodb")
 
 const templatePath = path.join(__dirname, '../templetes')
 const publicPath = path.join(__dirname, '../public')
@@ -31,6 +31,8 @@ app.get("/signup", (req, res) => {
 
 app.post("/signup", async (req, res) => {
     try {
+        await connectDB()
+
         if (req.body.password !== req.body.passwordCheck) {
             return res.send("Check Password")
         }
@@ -66,6 +68,8 @@ app.post("/signup", async (req, res) => {
 
 app.post("/login", async (req, res) => {
     try {
+        await connectDB()
+
         const user = await collection.findOne({ email: req.body.email })
 
         if (user && user.password === req.body.password) {

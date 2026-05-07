@@ -2,18 +2,33 @@ const mongoose = require("mongoose")
 require("dotenv").config()
 
 const mongoUrl = process.env.MONGO_URL
+let connectionPromise
 
-if (!mongoUrl) {
-    console.warn("MONGO_URL is missing. Add it in your local .env file and in your deployment environment variables.")
-}
-else {
-    mongoose.connect(mongoUrl)
-        .then(() => {
-            console.log("MongoDB connected");
+const connectDB = async () => {
+    if (!mongoUrl) {
+        throw new Error("MONGO_URL is missing. Add it in your local .env file and in your deployment environment variables.")
+    }
+
+    if (mongoose.connection.readyState === 1) {
+        return mongoose.connection
+    }
+
+    if (!connectionPromise) {
+        connectionPromise = mongoose.connect(mongoUrl, {
+            serverSelectionTimeoutMS: 15000
         })
-        .catch((err) => {
-            console.error("MongoDB connection error:", err.message);
-        })
+            .then(() => {
+                console.log("MongoDB connected")
+                return mongoose.connection
+            })
+            .catch((err) => {
+                connectionPromise = undefined
+                console.error("MongoDB connection error:", err.message)
+                throw err
+            })
+    }
+
+    return connectionPromise
 }
 
 
@@ -54,5 +69,8 @@ const LoginSchema = new mongoose.Schema({
 
 const collection = new mongoose.model("Userinfos", LoginSchema)
 
-module.exports = collection
+module.exports = {
+    collection,
+    connectDB
+}
 
